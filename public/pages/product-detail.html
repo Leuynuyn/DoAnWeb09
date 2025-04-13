@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <li><a href="/">Trang Chủ</a></li>
+            <li><a href="">Tìm Kiếm Nội Thất</a></li>
+            <li><a href="">Thêm Nội Thất</a></li>
+            <li><a href="">Cập Nhật Nội Thất</a></li>
+            <li><a href="">Xóa Nội Thất</a></li>
+            <li><a href="list.html">Danh Sách Nội Thất</a></li> 
+        </nav>
+    </div>
+<div style="text-align: center;">
+    <h1>Chi tiết sản phẩm</h1>
+    <a href="list.html">Quay lại danh sách</a>
+    <div id="productDetail" >
+        <h2 id="productName"></h2>
+        <p><strong>Mã sản phẩm:</strong> <span id="productId"></span></p>
+        <p><strong>Giá bán:</strong> <span id="productPrice"></span></p>
+        <p><strong>Giá gốc:</strong> <span id="productOriginalPrice"></span></p>
+        <p><strong>Chất liệu:</strong> <span id="productMaterial"></span></p>
+        <p><strong>Màu sắc:</strong> <span id="productColors"></span></p>
+        <p><strong>Kích thước:</strong> <span id="productSizes"></span></p>
+        <p><strong>Mô tả:</strong> <span id="productDescription"></span></p>
+        <img id="productImage" style="max-width: 450px;">
+    </div>
+</div>
+    <script>
+        function loadProductDetail(id) {
+            fetch(`/product/${id}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Không tìm thấy sản phẩm');
+                    }
+                    return response.json();
+                })
+                .then(product => {
+                    document.getElementById('productName').textContent = product.name;
+                    document.getElementById('productId').textContent = product.id;
+                    document.getElementById('productPrice').textContent = product.giaban;
+                    document.getElementById('productOriginalPrice').textContent = product.giagoc || 'N/A';
+                    document.getElementById('productMaterial').textContent = product.chatlieu;
+                    document.getElementById('productColors').textContent = product.mausac.join(', ');
+                    document.getElementById('productSizes').textContent = product.kichthuoc.join(', ');
+                    document.getElementById('productDescription').textContent = product.motasanpham || 'Không có mô tả';
+                    document.getElementById('productImage').src = `/Images/${product.image}`;
+                })
+                .catch(err => {
+                    console.error(err);
+                    document.getElementById('productDetail').innerHTML = '<p>Không tìm thấy sản phẩm</p>';
+                });
+        }
+
+        // Lấy ID từ URL và tải chi tiết
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        if (productId) {
+            loadProductDetail(productId);
+        } else {
+            document.getElementById('productDetail').innerHTML = '<p>Không tìm thấy sản phẩm</p>';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+}
+nav a {
+    margin-right: 10px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+.chitiet{
+    background-color: rgb(106, 106, 246);
+}
+th {
+    background-color: #f2f2f2;
+}
+form {
+    margin-bottom: 20px;
+}
+form label {
+    display: inline-block;
+    width: 150px;
+}
+form input, form select, form button {
+    margin-bottom: 10px;
+}
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+select, input[type="text"] {
+    padding: 5px;
+}
+img {
+    max-width: 100px;
+}
+#pagination {
+    margin-top: 20px;
+}
+#pagination button {
+    margin: 0 10px;
+}
+#pagination span {
+    font-weight: bold;
+}
+#productDetail {
+    /* max-width: 600px; */
+    margin-top: 20px;
+}
+#productDetail p {
+    margin: 10px 0;
+}

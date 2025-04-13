@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh Sách Sản Phẩm</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <li><a href="/">Trang Chủ</a></li>
+            <li><a href="">Tìm Kiếm Nội Thất</a></li>
+            <li><a href="">Thêm Nội Thất</a></li>
+            <li><a href="">Cập Nhật Nội Thất</a></li>
+            <li><a href="">Xóa Nội Thất</a></li>
+            <li><a href="list.html">Danh Sách Nội Thất</a></li> 
+        </nav>
+    </div>
+    <h1 style="text-align: center;">Danh sách sản phẩm</h1>
+    <div>
+        <label>Sắp xếp:</label>
+        <select id="sortBy" onchange="loadProducts(1)">
+            <option value="idAsc">ID tăng dần</option>
+            <option value="idDesc">ID giảm dần</option>
+            <option value="newest">Mới nhất</option>
+        </select>
+    </div>
+    <table id="productTable" border="1">
+        <thead>
+            <tr>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Giá bán</th>
+                <th>Chất liệu</th>
+                <th>Màu sắc</th>
+                <th>Kích thước</th>
+                <th>Hình ảnh</th>
+                <th>Chi tiết</th>
+            </tr>
+        </thead>
+        <tbody id="productList"></tbody>
+    </table>
+    <div id="pagination">
+        <button id="prevPage" onclick="changePage(-1)">Trang trước</button>
+        <span id="pageInfo"></span>
+        <button id="nextPage" onclick="changePage(1)">Trang sau</button>
+    </div>
+    <script>
+        let currentPage = 1;
+        let totalPages = 1;
+
+        function loadProducts(page = 1) {
+            currentPage = page;
+            const sortBy = document.getElementById('sortBy')?.value || 'idAsc';
+            const query = new URLSearchParams({ sortBy, page, limit: 10 }).toString();
+
+            fetch(`/list?${query}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Lỗi tải danh sách');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    totalPages = data.totalPages;
+                    const tbody = document.getElementById('productList');
+                    tbody.innerHTML = '';
+
+                    data.products.forEach(p => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${p.id}</td>
+                            <td>${p.name}</td>
+                            <td>${p.giaban}</td>
+                            <td>${p.chatlieu}</td>
+                            <td>${p.mausac.join(', ')}</td>
+                            <td>${p.kichthuoc.join(', ')}</td>
+                            <td><img src="/Images/${p.image}" width="100"></td>
+                            <td><button onclick="viewProductDetail('${p.id}')">Xem chi tiết</button></td>
+                        `;
+                        tbody.appendChild(row);
+                    });
+
+                    document.getElementById('pageInfo').textContent = `Trang ${data.currentPage} / ${totalPages}`;
+                    document.getElementById('prevPage').disabled = data.currentPage === 1;
+                    document.getElementById('nextPage').disabled = data.currentPage === totalPages;
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert('Lỗi tải danh sách sản phẩm');
+                });
+        }
+
+        function changePage(delta) {
+            const newPage = currentPage + delta;
+            if (newPage >= 1 && newPage <= totalPages) {
+                loadProducts(newPage);
+            }
+        }
+
+        function viewProductDetail(id) {
+            fetch(`/product/${id}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Sản phẩm không tồn tại');
+                    }
+                    return response.json();
+                })
+                .then(product => {
+                    window.location.href = `product-detail.html?id=${id}`;
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert('Không tìm thấy sản phẩm');
+                });
+        }
+
+        // Tải danh sách khi mở trang
+        window.onload = () => loadProducts(1);
+    </script>
+</body>
+</html>

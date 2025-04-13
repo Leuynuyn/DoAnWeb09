@@ -1,0 +1,1942 @@
+[
+  {
+    "id": "BANN0001",
+    "name": "Bàn làm việc gỗ sồi",
+    "image": "ban-1.jpg",
+    "giaban":"6,000,000 VND",
+    "giagoc": "6,500,000 VND",
+    "mausac": [
+      "Xám",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Gỗ công nghiệp",
+    "motasanpham": "Bàn làm việc gỗ sồi chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 179,
+    "cauhoi": [
+      {
+        "user": "User_85",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_30",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.8,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0002",
+    "name": "Bàn học gỗ công nghiệp",
+    "image": "ban-2.jpg",
+    "giaban":"7,500,000 VND",
+    "giagoc": "8,000,000 VND",
+    "mausac": [
+      "Xám",
+      "Nâu tự nhiên",
+      "Trắng"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ sồi",
+    "motasanpham": "Bàn học gỗ công nghiệp chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 101,
+    "cauhoi": [
+      {
+        "user": "User_54",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_25",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.5,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0003",
+    "name": "Bàn trang điểm hiện đại",
+    "image": "ban-3.jpg",
+    "giaban":"7,000,000 VND",
+    "giagoc": "7,500,000 VND",
+    "mausac": [
+      "Trắng",
+      "Xám",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm",
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Kim loại",
+    "motasanpham": "Bàn trang điểm hiện đại chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 122,
+    "cauhoi": [
+      {
+        "user": "User_20",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_26",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.4,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0004",
+    "name": "Bàn trà phòng khách",
+    "image": "ban-4.jpg",
+    "giaban":"4,300,000 VND",
+    "giagoc": "4,500,000 VND",
+    "mausac": [
+      "Xám",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm",
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Gỗ sồi",
+    "motasanpham": "Bàn trà phòng khách chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 94,
+    "cauhoi": [
+      {
+        "user": "User_82",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_67",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.3,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0005",
+    "name": "Bàn ăn gỗ tự nhiên",
+    "image": "ban-5.jpg",
+    "giaban":"4,000,000 VND",
+    "giagoc": "4,500,000 VND",
+    "mausac": [
+      "Trắng"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Da",
+    "motasanpham": "Bàn ăn gỗ tự nhiên chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 157,
+    "cauhoi": [
+      {
+        "user": "User_42",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_14",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.6,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0006",
+    "name": "Bàn họp văn phòng",
+    "image": "ban-6.jpg",
+    "giaban":"6,700,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Nâu tự nhiên",
+      "Trắng",
+      "Xám"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Gỗ sồi",
+    "motasanpham": "Bàn họp văn phòng chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 167,
+    "cauhoi": [
+      {
+        "user": "User_79",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_86",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.5,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0007",
+    "name": "Bàn vi tính nhỏ gọn",
+    "image": "ban-7.jpg",
+    "giaban":"5,000,000 VND",
+    "giagoc": "5,500,000 VND",
+    "mausac": [
+      "Trắng",
+      "Xám"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Kim loại",
+    "motasanpham": "Bàn vi tính nhỏ gọn chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 94,
+    "cauhoi": [
+      {
+        "user": "User_87",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_33",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.9,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0008",
+    "name": "Bàn cà phê kiểu dáng Bắc Âu",
+    "image": "ban-8.jpg",
+    "giaban":"7,900,000 VND",
+    "giagoc": "8,000,000 VND",
+    "mausac": [
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Da",
+    "motasanpham": "Bàn cà phê kiểu dáng Bắc Âu chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 88,
+    "cauhoi": [
+      {
+        "user": "User_11",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_62",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.0,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0009",
+    "name": "Bàn làm việc chân sắt",
+    "image": "ban-9.jpg",
+    "giaban":"7,000,000 VND",
+    "giagoc": "7,500,000 VND",
+    "mausac": [
+      "Trắng",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Kim loại",
+    "motasanpham": "Bàn làm việc chân sắt chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 129,
+    "cauhoi": [
+      {
+        "user": "User_89",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_26",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.8,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0010",
+    "name": "Bàn học sinh có kệ sách",
+    "image": "ban-10.jpg",
+    "giaban":"5,000,000 VND",
+    "giagoc": "5,200,000 VND",
+    "mausac": [
+      "Nâu tự nhiên",
+      "Trắng",
+      "Xám"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Gỗ công nghiệp",
+    "motasanpham": "Bàn học sinh có kệ sách chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 98,
+    "cauhoi": [
+      {
+        "user": "User_32",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_75",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.9,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0011",
+    "name": "Bàn góc làm việc",
+    "image": "ban-11.jpg",
+    "giaban":"8,000,000 VND",
+    "giagoc": "8,200,000 VND",
+    "mausac": [
+      "Xám"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm",
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ công nghiệp",
+    "motasanpham": "Bàn góc làm việc chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 196,
+    "cauhoi": [
+      {
+        "user": "User_29",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_36",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.6,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0012",
+    "name": "Bàn làm việc phong cách Nhật",
+    "image": "ban-12.jpg",
+    "giaban":"7,900,000 VND",
+    "giagoc": "8,000,000 VND",
+    "mausac": [
+      "Xám",
+      "Nâu tự nhiên",
+      "Trắng"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm",
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Nhựa",
+    "motasanpham": "Bàn làm việc phong cách Nhật chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 188,
+    "cauhoi": [
+      {
+        "user": "User_62",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_51",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.2,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0013",
+    "name": "Bàn trang điểm có gương",
+    "image": "ban-13.jpg",
+    "giaban":"4,300,000 VND",
+    "giagoc": "4,500,000 VND",
+    "mausac": [
+      "Xám",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm",
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Gỗ sồi",
+    "motasanpham": "Bàn trang điểm có gương chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 187,
+    "cauhoi": [
+      {
+        "user": "User_95",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_89",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.2,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0014",
+    "name": "Bàn ăn thông minh gấp gọn",
+    "image": "ban-14.jpg",
+    "giaban":"6,800,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Nâu tự nhiên",
+      "Trắng",
+      "Xám"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm",
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Bàn ăn thông minh gấp gọn chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 164,
+    "cauhoi": [
+      {
+        "user": "User_63",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_92",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.0,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0015",
+    "name": "Bàn tiếp khách sang trọng",
+    "image": "ban-15.jpg",
+    "giaban":"6,300,000 VND",
+    "giagoc": "6,500,000 VND",
+    "mausac": [
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Gỗ tự nhiên",
+    "motasanpham": "Bàn tiếp khách sang trọng chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 185,
+    "cauhoi": [
+      {
+        "user": "User_97",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_37",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.5,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0016",
+    "name": "Bàn làm việc kết hợp giá sách",
+    "image": "ban-16.jpg",
+    "giaban":"4,900,000 VND",
+    "giagoc": "5,000,000 VND",
+    "mausac": [
+      "Trắng",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm",
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Nhựa",
+    "motasanpham": "Bàn làm việc kết hợp giá sách chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 165,
+    "cauhoi": [
+      {
+        "user": "User_33",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_6",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.6,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0017",
+    "name": "Bàn làm việc chân chữ X",
+    "image": "ban-17.jpg",
+    "giaban":"6,800,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Xám",
+      "Trắng"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Nhựa",
+    "motasanpham": "Bàn làm việc chân chữ X chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 57,
+    "cauhoi": [
+      {
+        "user": "User_28",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_67",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.2,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0018",
+    "name": "Bàn gấp tiện lợi",
+    "image": "ban-18.jpg",
+    "giaban":"4,300,000 VND",
+    "giagoc": "4,500,000 VND",
+    "mausac": [
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Nhựa",
+    "motasanpham": "Bàn gấp tiện lợi chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 112,
+    "cauhoi": [
+      {
+        "user": "User_55",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_92",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.5,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0019",
+    "name": "Bàn họp lớn văn phòng",
+    "image": "ban-19.jpg",
+    "giaban":"6,800,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Xám",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm",
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Bàn họp lớn văn phòng chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 142,
+    "cauhoi": [
+      {
+        "user": "User_99",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_45",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.1,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "BANN0020",
+    "name": "Bàn đứng làm việc hiện đại",
+    "image": "ban-20.jpg",
+    "giaban":"4,300,000 VND",
+    "giagoc": "4,500,000 VND",
+    "mausac": [
+      "Trắng"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Bàn đứng làm việc hiện đại chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 85,
+    "cauhoi": [
+      {
+        "user": "User_90",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_26",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.6,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0001",
+    "name": "Tủ quần áo gỗ sồi",
+    "image": "tu-1.jpg",
+    "giaban":"6,800,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm",
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ tự nhiên",
+    "motasanpham": "Tủ quần áo gỗ sồi chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 77,
+    "cauhoi": [
+      {
+        "user": "User_72",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_4",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.6,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0002",
+    "name": "Tủ giày thông minh",
+    "image": "tu-2.jpg",
+    "giaban":"6,900,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Xám",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Gỗ công nghiệp",
+    "motasanpham": "Tủ giày thông minh chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 180,
+    "cauhoi": [
+      {
+        "user": "User_72",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_49",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.2,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0003",
+    "name": "Tủ bếp gỗ công nghiệp",
+    "image": "tu-3.jpg",
+    "giaban":"6,800,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Xám"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Tủ bếp gỗ công nghiệp chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 101,
+    "cauhoi": [
+      {
+        "user": "User_63",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_42",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.3,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0004",
+    "name": "Tủ sách nhiều ngăn",
+    "image": "tu-4.jpg",
+    "giaban":"7,300,000 VND",
+    "giagoc": "7,500,000 VND",
+    "mausac": [
+      "Xám"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm",
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Gỗ sồi",
+    "motasanpham": "Tủ sách nhiều ngăn chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 156,
+    "cauhoi": [
+      {
+        "user": "User_3",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_69",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.3,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0005",
+    "name": "Tủ gỗ để đồ phòng khách",
+    "image": "tu-5.jpg",
+    "giaban":"6,900,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Trắng"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm",
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Gỗ tự nhiên",
+    "motasanpham": "Tủ gỗ để đồ phòng khách chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 51,
+    "cauhoi": [
+      {
+        "user": "User_1",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_41",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.7,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0006",
+    "name": "Tủ trang trí đa năng",
+    "image": "tu-6.jpg",
+    "giaban":"7,300,000 VND",
+    "giagoc": "7,500,000 VND",
+    "mausac": [
+      "Xám",
+      "Nâu tự nhiên",
+      "Trắng"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ tự nhiên",
+    "motasanpham": "Tủ trang trí đa năng chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 124,
+    "cauhoi": [
+      {
+        "user": "User_4",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_19",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.7,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0007",
+    "name": "Tủ quần áo 3 cánh",
+    "image": "tu-7.jpg",
+    "giaban":"4,300,000 VND",
+    "giagoc": "4,500,000 VND",
+    "mausac": [
+      "Nâu tự nhiên",
+      "Xám",
+      "Trắng"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm",
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Gỗ tự nhiên",
+    "motasanpham": "Tủ quần áo 3 cánh chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 50,
+    "cauhoi": [
+      {
+        "user": "User_36",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_45",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.2,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0008",
+    "name": "Tủ đựng tài liệu văn phòng",
+    "image": "tu-8.jpg",
+    "giaban":"4,800,000 VND",
+    "giagoc": "5,000,000 VND",
+    "mausac": [
+      "Xám",
+      "Nâu tự nhiên",
+      "Trắng"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Da",
+    "motasanpham": "Tủ đựng tài liệu văn phòng chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 178,
+    "cauhoi": [
+      {
+        "user": "User_99",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_39",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.4,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0009",
+    "name": "Tủ nhựa đựng quần áo",
+    "image": "tu-9.jpg",
+    "giaban":"7,300,000 VND",
+    "giagoc": "7,500,000 VND",
+    "mausac": [
+      "Xám",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm",
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Nhựa",
+    "motasanpham": "Tủ nhựa đựng quần áo chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 51,
+    "cauhoi": [
+      {
+        "user": "User_100",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_32",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.9,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0010",
+    "name": "Tủ trưng bày kính",
+    "image": "tu-10.jpg",
+    "giaban":"7,300,000 VND",
+    "giagoc": "7,500,000 VND",
+    "mausac": [
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Tủ trưng bày kính chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 196,
+    "cauhoi": [
+      {
+        "user": "User_19",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_37",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.3,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0011",
+    "name": "Tủ lạnh mini gỗ",
+    "image": "tu-11.jpg",
+    "giaban":"7,300,000 VND",
+    "giagoc": "7,500,000 VND",
+    "mausac": [
+      "Nâu tự nhiên",
+      "Xám"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Tủ lạnh mini gỗ chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 68,
+    "cauhoi": [
+      {
+        "user": "User_88",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_18",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.7,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0012",
+    "name": "Tủ gỗ đặt tivi",
+    "image": "tu-12.jpg",
+    "giaban":"6,300,000 VND",
+    "giahoc": "6,500,000 VND",
+    "mausac": [
+      "Xám",
+      "Trắng",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm",
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Nhựa",
+    "motasanpham": "Tủ gỗ đặt tivi chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 77,
+    "cauhoi": [
+      {
+        "user": "User_18",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_68",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.1,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0013",
+    "name": "Tủ gỗ đơn giản",
+    "image": "tu-13.jpg",
+    "giaban":"6,800,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Trắng",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm",
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Da",
+    "motasanpham": "Tủ gỗ đơn giản chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 172,
+    "cauhoi": [
+      {
+        "user": "User_26",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_32",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.9,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0014",
+    "name": "Tủ bếp hiện đại",
+    "image": "tu-14.jpg",
+    "giaban":"7,800,000 VND",
+    "giagoc": "8,000,000 VND",
+    "mausac": [
+      "Nâu tự nhiên",
+      "Xám",
+      "Trắng"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm",
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Tủ bếp hiện đại chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 61,
+    "cauhoi": [
+      {
+        "user": "User_49",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_46",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.6,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0015",
+    "name": "Tủ quần áo cửa lùa",
+    "image": "tu-15.jpg",
+    "giaban":"6,300,000 VND",
+    "giagoc": "6,500,000 VND",
+    "mausac": [
+      "Xám",
+      "Trắng",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm",
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Nhựa",
+    "motasanpham": "Tủ quần áo cửa lùa chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 177,
+    "cauhoi": [
+      {
+        "user": "User_46",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_79",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.5,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0016",
+    "name": "Tủ quần áo gỗ công nghiệp",
+    "image": "tu-16.jpg",
+    "giaban":"7,800,000 VND",
+    "giagoc": "8,000,000 VND",
+    "mausac": [
+      "Xám"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm",
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Tủ quần áo gỗ công nghiệp chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 191,
+    "cauhoi": [
+      {
+        "user": "User_89",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_46",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.7,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0017",
+    "name": "Tủ giày nhỏ gọn",
+    "image": "tu-17.jpg",
+    "giaban":"6,800,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Kim loại",
+    "motasanpham": "Tủ giày nhỏ gọn chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 109,
+    "cauhoi": [
+      {
+        "user": "User_47",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_23",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.4,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0018",
+    "name": "Tủ đồ trang điểm",
+    "image": "tu-18.jpg",
+    "giaban":"6,800,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Xám"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Da",
+    "motasanpham": "Tủ đồ trang điểm chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 181,
+    "cauhoi": [
+      {
+        "user": "User_12",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_92",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.7,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0019",
+    "name": "Tủ đựng đồ nhà bếp",
+    "image": "tu-19.jpg",
+    "giaban":"6,800,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Xám"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm",
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Gỗ tự nhiên",
+    "motasanpham": "Tủ đựng đồ nhà bếp chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 60,
+    "cauhoi": [
+      {
+        "user": "User_45",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_36",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.1,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "TUQA0020",
+    "name": "Tủ để giày dép thông minh",
+    "image": "tu-20.jpg",
+    "giaban":"6,800,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Nâu tự nhiên",
+      "Trắng",
+      "Xám"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm",
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Tủ để giày dép thông minh chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 138,
+    "cauhoi": [
+      {
+        "user": "User_47",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_7",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.0,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0001",
+    "name": "Giường gỗ sồi hiện đại",
+    "image": "giuong-1.jpg",
+    "giaban":"4,300,000 VND",
+    "giagoc": "4,500,000 VND",
+    "mausac": [
+      "Xám"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm",
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Kim loại",
+    "motasanpham": "Giường gỗ sồi hiện đại chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 114,
+    "cauhoi": [
+      {
+        "user": "User_64",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_44",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.3,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0002",
+    "name": "Giường tầng trẻ em",
+    "image": "giuong-2.jpg",
+    "giaban":"4,800,000 VND",
+    "giagoc": "5,000,000 VND",
+    "mausac": [
+      "Xám"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm",
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Da",
+    "motasanpham": "Giường tầng trẻ em chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 93,
+    "cauhoi": [
+      {
+        "user": "User_50",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_55",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.7,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0003",
+    "name": "Giường ngủ phong cách Nhật",
+    "image": "giuong-3.jpg",
+    "giaban":"6,300,000 VND",
+    "giagoc": "6,500,000 VND",
+    "mausac": [
+      "Xám",
+      "Trắng",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm",
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Kim loại",
+    "motasanpham": "Giường ngủ phong cách Nhật chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 60,
+    "cauhoi": [
+      {
+        "user": "User_16",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_13",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.8,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0004",
+    "name": "Giường da sang trọng",
+    "image": "giuong-4.jpg",
+    "giaban":"7,300,000 VND",
+    "giagoc": "7,500,000 VND",
+    "mausac": [
+      "Xám"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Nhựa",
+    "motasanpham": "Giường da sang trọng chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 151,
+    "cauhoi": [
+      {
+        "user": "User_16",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_48",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.6,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0005",
+    "name": "Giường hộp có ngăn kéo",
+    "image": "giuong-5.jpg",
+    "giaban":"4,300,000 VND",
+    "giagoc": "4,500,000 VND",
+    "mausac": [
+      "Xám",
+      "Trắng"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm",
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ tự nhiên",
+    "motasanpham": "Giường hộp có ngăn kéo chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 153,
+    "cauhoi": [
+      {
+        "user": "User_22",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_9",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.9,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0006",
+    "name": "Giường thông minh gấp gọn",
+    "image": "giuong-6.jpg",
+    "giaban":"7,300,000 VND",
+    "giagoc": "7,500,000 VND",
+    "mausac": [
+      "Xám",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm",
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Gỗ công nghiệp",
+    "motasanpham": "Giường thông minh gấp gọn chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 137,
+    "cauhoi": [
+      {
+        "user": "User_88",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_90",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.0,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0007",
+    "name": "Giường sắt đơn giản",
+    "image": "giuong-7.jpg",
+    "giaban":"7,300,000 VND",
+    "giagoc": "7,500,000 VND",
+    "mausac": [
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm",
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Nhựa",
+    "motasanpham": "Giường sắt đơn giản chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 162,
+    "cauhoi": [
+      {
+        "user": "User_88",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_30",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.1,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0008",
+    "name": "Giường ngủ Bắc Âu",
+    "image": "giuong-8.jpg",
+    "giaban":"6,300,000 VND",
+    "giagoc": "6,500,000 VND",
+    "mausac": [
+      "Xám"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Giường ngủ Bắc Âu chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 75,
+    "cauhoi": [
+      {
+        "user": "User_88",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_5",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.5,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0009",
+    "name": "Giường ngủ bọc nệm",
+    "image": "giuong-9.jpg",
+    "giaban":"7,800,000 VND",
+    "giagoc": "8,000,000 VND",
+    "mausac": [
+      "Trắng",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Gỗ công nghiệp",
+    "motasanpham": "Giường ngủ bọc nệm chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 168,
+    "cauhoi": [
+      {
+        "user": "User_60",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_2",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.9,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0010",
+    "name": "Giường ngủ bọc vải",
+    "image": "giuong-10.jpg",
+    "giaban":"6,800,000 VND",
+    "giagoc": "7,000,000 VND",
+    "mausac": [
+      "Xám",
+      "Nâu tự nhiên",
+      "Trắng"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Nhựa",
+    "motasanpham": "Giường ngủ bọc vải chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 105,
+    "cauhoi": [
+      {
+        "user": "User_26",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_1",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.7,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0011",
+    "name": "Giường ngủ đôi cao cấp",
+    "image": "giuong-11.jpg",
+    "giaban":"7,800,000 VND",
+    "giagoc": "8,000,000 VND",
+    "mausac": [
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Giường ngủ đôi cao cấp chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 53,
+    "cauhoi": [
+      {
+        "user": "User_100",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_97",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.4,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0012",
+    "name": "Giường ngủ cho bé",
+    "image": "giuong-12.jpg",
+    "giaban":"7,300,000 VND",
+    "giagoc": "7,500,000 VND",
+    "mausac": [
+      "Nâu tự nhiên",
+      "Xám"
+    ],
+    "kichthuoc": [
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ sồi",
+    "motasanpham": "Giường ngủ cho bé chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 64,
+    "cauhoi": [
+      {
+        "user": "User_16",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_49",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.8,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0013",
+    "name": "Giường ngủ gỗ công nghiệp",
+    "image": "giuong-13.jpg",
+    "giaban":"4,300,000 VND",
+    "giagoc": "4,500,000 VND",
+    "mausac": [
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Kim loại",
+    "motasanpham": "Giường ngủ gỗ công nghiệp chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 71,
+    "cauhoi": [
+      {
+        "user": "User_43",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_48",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.6,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0014",
+    "name": "Giường ngủ kiểu cổ điển",
+    "image": "giuong-14.jpg",
+    "giaban":"4,300,000 VND",
+    "giagoc": "4,500,000 VND",
+    "mausac": [
+      "Nâu tự nhiên",
+      "Xám"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm",
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Nhựa",
+    "motasanpham": "Giường ngủ kiểu cổ điển chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 156,
+    "cauhoi": [
+      {
+        "user": "User_5",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_76",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.7,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0015",
+    "name": "Giường ngủ bọc da",
+    "image": "giuong-15.jpg",
+    "giaban":"7,300,000 VND",
+    "giagoc": "7,500,000 VND",
+    "mausac": [
+      "Nâu tự nhiên",
+      "Xám"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm"
+    ],
+    "chatlieu": "Da",
+    "motasanpham": "Giường ngủ bọc da chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 163,
+    "cauhoi": [
+      {
+        "user": "User_77",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_89",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.3,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0016",
+    "name": "Giường ngủ phong cách Châu Âu",
+    "image": "giuong-16.jpg",
+    "giaban":"4,800,000 VND",
+    "giagoc": "5,000,000 VND",
+    "mausac": [
+      "Xám"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Giường ngủ phong cách Châu Âu chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 91,
+    "cauhoi": [
+      {
+        "user": "User_50",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_47",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.0,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0017",
+    "name": "Giường ngủ liền tủ",
+    "image": "giuong-17.jpg",
+    "giaban":"4,800,000 VND",
+    "giagoc": "5,000,000 VND",
+    "mausac": [
+      "Xám"
+    ],
+    "kichthuoc": [
+      "160cm x 200cm"
+    ],
+    "chatlieu": "Gỗ sồi",
+    "motasanpham": "Giường ngủ liền tủ chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 124,
+    "cauhoi": [
+      {
+        "user": "User_98",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_56",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.2,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0018",
+    "name": "Giường ngủ gỗ hương",
+    "image": "giuong-18.jpg",
+    "giaban":"7,800,000 VND",
+    "giagoc": "8,000,000 VND",
+    "mausac": [
+      "Xám",
+      "Trắng",
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm",
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ sồi",
+    "motasanpham": "Giường ngủ gỗ hương chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 160,
+    "cauhoi": [
+      {
+        "user": "User_4",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_35",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 3.4,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0019",
+    "name": "Giường tầng kết hợp bàn học",
+    "image": "giuong-19.jpg",
+    "giaban":"4,300,000 VND",
+    "giagoc": "4,500,000 VND",
+    "mausac": [
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "120cm x 60cm",
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Giường tầng kết hợp bàn học chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 145,
+    "cauhoi": [
+      {
+        "user": "User_18",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_11",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 4.6,
+        "date": "2024-07-26"
+      }
+    ]
+  },
+  {
+    "id": "GIUG0020",
+    "name": "Giường ngủ có hộc chứa đồ",
+    "image": "giuong-20.jpg",
+    "giaban":"4,800,000 VND",
+    "giagoc": "5,000,000 VND",
+    "mausac": [
+      "Nâu tự nhiên"
+    ],
+    "kichthuoc": [
+      "180cm x 220cm",
+      "140cm x 70cm"
+    ],
+    "chatlieu": "Gỗ ép",
+    "motasanpham": "Giường ngủ có hộc chứa đồ chất lượng cao, thiết kế hiện đại và tiện dụng.",
+    "soluongdaban": 79,
+    "cauhoi": [
+      {
+        "user": "User_24",
+        "question": "Sản phẩm có dễ lắp ráp không?",
+        "date": "2024-07-25"
+      }
+    ],
+    "nhanxet": [
+      {
+        "user": "User_23",
+        "comment": "Sản phẩm tốt, chất lượng đảm bảo.",
+        "rating": 5.0,
+        "date": "2024-07-26"
+      }
+    ]
+  }
+]
