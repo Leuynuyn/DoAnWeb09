@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tìm kiếm sản phẩm</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <li><a href="/">Trang Chủ</a></li>
+            <li><a href="read.html">Tìm Kiếm Nội Thất</a></li>
+            <li><a href="create.html">Thêm Nội Thất</a></li>
+            <li><a href="update.html">Cập Nhật Nội Thất</a></li>
+            <li><a href="delete.html">Xóa Nội Thất</a></li>
+            <li><a href="list.html">Danh Sách Nội Thất</a></li> 
+        </nav>
+    </div>
+<div class="searchSp">
+    <h1>Tìm kiếm sản phẩm</h1>
+    <a href="home.html">Quay lại</a>
+    <form style="margin-top: 30px;">
+        <label>Tên sản phẩm:</label>
+        <input type="text" id="name" placeholder="Nhập tên hoặc một phần tên"><br>
+        <label>Chất liệu:</label>
+        <input type="text" id="chatlieu" placeholder="Nhập chất liệu hoặc một phần"><br>
+        <label>Màu sắc:</label>
+        <input type="text" id="mausac" placeholder="Nhập một màu sắc"><br>
+        <label>Danh mục:</label>
+        <select id="category">
+            <option value="">Tất cả</option>
+            <option value="BANN">Bàn</option>
+            <option value="TUQA">Tủ</option>
+            <option value="GIUG">Giường</option>
+        </select><br>
+        <label>Giá từ:</label>
+        <input type="text" id="priceFrom" placeholder="VD: 4,000,000"><br>
+        <label>Giá đến:</label>
+        <input type="text" id="priceTo" placeholder="VD: 7,000,000"><br>
+        <label>Hình ảnh:</label>
+        <input type="text" id="image" placeholder="Nhập tên file ảnh"><br>
+        <button type="button" onclick="searchProducts()">Tìm kiếm</button>    </form>
+    <div id="searchResult"></div>
+</div>
+<script>
+    function searchProducts() {
+        const name = document.getElementById('name').value;
+        const chatlieu = document.getElementById('chatlieu').value;
+        const mausac = document.getElementById('mausac').value;
+        const category = document.getElementById('category').value;
+        const priceFrom = document.getElementById('priceFrom').value;
+        const priceTo = document.getElementById('priceTo').value;
+        const image = document.getElementById('image').value;
+
+        const query = new URLSearchParams({
+            name,
+            chatlieu,
+            mausac,
+            category,
+            priceFrom,
+            priceTo,
+            image
+        }).toString();
+
+        fetch(`/read?${query}`)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('searchResult').innerHTML = html;
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Lỗi tìm kiếm');
+            });
+    }
+</script>
+</body>
+</html>
