@@ -41,6 +41,10 @@ app.get('/list.html', (req, res) => {
 app.get('/product-detail.html', (req, res) => {
     res.sendFile(__dirname + '/public/pages/product-detail.html')
 });
+app.get('/read.html', (req, res) => {
+    res.sendFile(__dirname + '/public/pages/read.html')
+});
+
 //Lay danh sách sản phẩm
 app.get('/list', async (req, res) => {
     try {
@@ -84,6 +88,55 @@ app.get('/product/:id', async (req, res) => {
         }
         res.json(product);
     } catch (error) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// Tìm kiếm sản phẩm (dùng OR)
+app.get('/read', async (req, res) => {
+    try {
+        const db = client.db('FurnitureDB');
+        const collection = db.collection('products');
+        const { name, chatlieu, mausac, category, priceFrom, priceTo, image } = req.query;
+        let query = { $or: [] };
+
+        if (name) query.$or.push({ name: { $regex: name, $options: 'i' } });
+        if (chatlieu) query.$or.push({ chatlieu: { $regex: chatlieu, $options: 'i' } });
+        if (mausac) query.$or.push({ mausac: { $in: [mausac] } });
+        if (category) query.$or.push({ id: { $regex: `^${category}`, $options: 'i' } });
+        if (priceFrom || priceTo) {
+            let priceQuery = {};
+            if (priceFrom) priceQuery.$gte = parseInt(priceFrom.replace(/[^0-9]/g, ''));
+            if (priceTo) priceQuery.$lte = parseInt(priceTo.replace(/[^0-9]/g, ''));
+            if (Object.keys(priceQuery).length > 0) query.$or.push({ giaban: priceQuery });
+        }
+        if (image) query.$or.push({ image: { $regex: image, $options: 'i' } });
+
+        // Nếu không có tiêu chí nào, trả về tất cả sản phẩm
+        if (query.$or.length === 0) {
+            query = {};
+        }
+
+        const products = await collection.find(query).toArray();
+        if (products.length === 0) {
+            return res.send('<p>Không có kết quả tìm kiếm</p>');
+        }
+
+        let html = '<table border="1"><tr><th>Mã</th><th>Tên</th><th>Giá bán</th><th>Chất liệu</th><th>Màu sắc</th><th>Kích thước</th><th>Hình ảnh</th></tr>';
+        products.forEach(p => {
+            html += `<tr>
+                <td>${p.id}</td>
+                <td>${p.name}</td>
+                <td>${p.giaban}</td>
+                <td>${p.chatlieu}</td>
+                <td>${p.mausac.join(', ')}</td>
+                <td>${p.kichthuoc.join(', ')}</td>
+                <td><img src="/Images/${p.image}" width="100"></td>
+            </tr>`;
+        });
+        html += '</table>';
+        res.send(html);
+    } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });

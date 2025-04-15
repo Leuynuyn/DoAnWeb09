@@ -10,10 +10,10 @@
     <div class="header">
         <nav>
             <li><a href="/">Trang Chủ</a></li>
-            <li><a href="">Tìm Kiếm Nội Thất</a></li>
-            <li><a href="">Thêm Nội Thất</a></li>
-            <li><a href="">Cập Nhật Nội Thất</a></li>
-            <li><a href="">Xóa Nội Thất</a></li>
+            <li><a href="read.html">Tìm Kiếm Nội Thất</a></li>
+            <li><a href="create.html">Thêm Nội Thất</a></li>
+            <li><a href="update.html">Cập Nhật Nội Thất</a></li>
+            <li><a href="delete.html">Xóa Nội Thất</a></li>
             <li><a href="list.html">Danh Sách Nội Thất</a></li> 
         </nav>
     </div>
@@ -51,6 +51,10 @@
         let totalPages = 1;
 
         function loadProducts(page = 1) {
+            // Chỉ chạy nếu trang hiện tại là list.html
+            if (window.location.pathname !== '/list.html') {
+                return;
+            }
             currentPage = page;
             const sortBy = document.getElementById('sortBy')?.value || 'idAsc';
             const query = new URLSearchParams({ sortBy, page, limit: 10 }).toString();
@@ -117,7 +121,10 @@
         }
 
         // Tải danh sách khi mở trang
-        window.onload = () => loadProducts(1);
+        window.onload = () => {
+            document.getElementById('productList').innerHTML = '';
+            loadProducts();
+        }
     </script>
 </body>
 </html>
