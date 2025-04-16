@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Tìm kiếm sản phẩm</title>
-    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/style-read.css">
+    <title>Tìm kiếm sản phẩm</title>
 </head>
 <body>
     <div class="header">
@@ -16,62 +18,198 @@
             <li><a href="list.html">Danh Sách Nội Thất</a></li> 
         </nav>
     </div>
-<div class="searchSp">
-    <h1>Tìm kiếm sản phẩm</h1>
-    <a href="home.html">Quay lại</a>
-    <form style="margin-top: 30px;">
-        <label>Tên sản phẩm:</label>
-        <input type="text" id="name" placeholder="Nhập tên hoặc một phần tên"><br>
-        <label>Chất liệu:</label>
-        <input type="text" id="chatlieu" placeholder="Nhập chất liệu hoặc một phần"><br>
-        <label>Màu sắc:</label>
-        <input type="text" id="mausac" placeholder="Nhập một màu sắc"><br>
-        <label>Danh mục:</label>
-        <select id="category">
-            <option value="">Tất cả</option>
-            <option value="BANN">Bàn</option>
-            <option value="TUQA">Tủ</option>
-            <option value="GIUG">Giường</option>
-        </select><br>
-        <label>Giá từ:</label>
-        <input type="text" id="priceFrom" placeholder="VD: 4,000,000"><br>
-        <label>Giá đến:</label>
-        <input type="text" id="priceTo" placeholder="VD: 7,000,000"><br>
-        <label>Hình ảnh:</label>
-        <input type="text" id="image" placeholder="Nhập tên file ảnh"><br>
-        <button type="button" onclick="searchProducts()">Tìm kiếm</button>    </form>
-    <div id="searchResult"></div>
-</div>
-<script>
-    function searchProducts() {
-        const name = document.getElementById('name').value;
-        const chatlieu = document.getElementById('chatlieu').value;
-        const mausac = document.getElementById('mausac').value;
-        const category = document.getElementById('category').value;
-        const priceFrom = document.getElementById('priceFrom').value;
-        const priceTo = document.getElementById('priceTo').value;
-        const image = document.getElementById('image').value;
 
-        const query = new URLSearchParams({
-            name,
-            chatlieu,
-            mausac,
-            category,
-            priceFrom,
-            priceTo,
-            image
-        }).toString();
+    <div class="searchSp">
+        <h1>Tìm Kiếm Sản Phẩm</h1>
+        <form id="searchForm">
+            <div class="filter-group">
+                <label>Loại Sản Phẩm:</label>
+                <button type="button" class="category-btn" data-value="">Tất cả</button>
+                <button type="button" class="category-btn" data-value="BANN">Bàn</button>
+                <button type="button" class="category-btn" data-value="TUQA">Tủ</button>
+                <button type="button" class="category-btn" data-value="GIUG">Giường</button>
+                <input type="hidden" id="category" name="category">
+            </div>
+            <div class="filter-group">
+                <label>Kích Thước:</label>
+                <button type="button" class="size-btn" data-value="">Tất cả</button>
+                <button type="button" class="size-btn" data-value="120cm x 60cm">120cm x 60cm</button>
+                <button type="button" class="size-btn" data-value="140cm x 70cm">140cm x 70cm</button>
+                <button type="button" class="size-btn" data-value="160cm x 200cm">160cm x 200cm</button>
+                <button type="button" class="size-btn" data-value="180cm x 220cm">180cm x 220cm</button>
+                <input type="hidden" id="kichthuoc" name="kichthuoc">
+            </div>
+            <div class="filter-group">
+                <label>Màu Sắc:</label>
+                <button type="button" class="color-btn" data-value="">Tất cả</button>
+                <button type="button" class="color-btn" data-value="xám">Xám</button>
+                <button type="button" class="color-btn" data-value="nâu tự nhiên">Nâu tự nhiên</button>
+                <button type="button" class="color-btn" data-value="trắng">Trắng</button>
+                <input type="hidden" id="mausac" name="mausac">
+            </div>
+            <div class="filter-group">
+                <label>Chất Liệu:</label>
+                <button type="button" class="material-btn" data-value="">Tất cả</button>
+                <button type="button" class="material-btn" data-value="Gỗ công nghiệp">Gỗ công nghiệp</button>
+                <button type="button" class="material-btn" data-value="Gỗ sồi">Gỗ sồi</button>
+                <button type="button" class="material-btn" data-value="Kim loại">Kim loại</button>
+                <button type="button" class="material-btn" data-value="Da">Da</button>
+                <button type="button" class="material-btn" data-value="Nhựa">Nhựa</button>
+                <button type="button" class="material-btn" data-value="Gỗ tự nhiên">Gỗ tự nhiên</button>
+                <button type="button" class="material-btn" data-value="Gỗ ép">Gỗ ép</button>
+                <input type="hidden" id="chatlieu" name="chatlieu">
+            </div>
+            <div class="filter-group">
+                <label>Giá:</label>
+                <input type="text" id="priceFrom" name="priceFrom" placeholder="VD: 4,000,000">
+                <input type="text" id="priceTo" name="priceTo" placeholder="VD: 7,000,000">
+            </div>
+            <div class="filter-group">
+                <label>Sắp xếp:</label>
+                <select id="sortBy" name="sortBy">
+                    <option value="priceAsc">Giá tăng dần</option>
+                    <option value="priceDesc">Giá giảm dần</option>
+                </select>
+            </div>
+            <button type="button" onclick="searchProducts()">Tìm kiếm</button>
+        </form>
+        <div id="searchResult">
+            <table id="productTable" border="1">
+                <thead>
+                    <tr>
+                        <th>Mã</th>
+                        <th>Tên</th>
+                        <th>Giá bán</th>
+                        <th>Chất liệu</th>
+                        <th>Màu sắc</th>
+                        <th>Kích thước</th>
+                        <th>Hình ảnh</th>
+                        <th>Chi tiết</th>
+                    </tr>
+                </thead>
+                <tbody id="productList"></tbody>
+            </table>
+            <div id="pagination">
+                <button id="prevPage" onclick="changePage(-1)">Trang trước</button>
+                <span id="pageInfo"></span>
+                <button id="nextPage" onclick="changePage(1)">Trang sau</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentPage = 1;
+        let totalPages = 1;
 
-        fetch(`/read?${query}`)
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('searchResult').innerHTML = html;
-            })
-            .catch(err => {
-                console.error(err);
-                alert('Lỗi tìm kiếm');
+        // Quản lý trạng thái chọn nút
+        function setupButtonGroup(buttonClass, inputId) {
+            const buttons = document.querySelectorAll(`.${buttonClass}`);
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const isAllButton = button.dataset.value === '';
+                    const allButton = document.querySelector(`.${buttonClass}[data-value=""]`);
+
+                    if (isAllButton) {
+                        // Nếu nhấn nút "Tất cả", bỏ chọn tất cả các nút khác
+                        buttons.forEach(btn => {
+                            if (btn !== button) btn.classList.remove('active');
+                        });
+                        button.classList.add('active');
+                        document.getElementById(inputId).value = '';
+                    } else {
+                        // Nếu nhấn nút cụ thể, bỏ chọn nút "Tất cả"
+                        if (allButton) allButton.classList.remove('active');
+                        // Toggle trạng thái active của nút được nhấn
+                        button.classList.toggle('active');
+                        // Lấy tất cả các nút đang active (trừ nút "Tất cả")
+                        const selectedValues = Array.from(document.querySelectorAll(`.${buttonClass}.active`))
+                            .filter(btn => btn.dataset.value !== '')
+                            .map(btn => btn.dataset.value);
+                        // Cập nhật trường ẩn
+                        document.getElementById(inputId).value = selectedValues.join(',');
+                    }
+                });
             });
-    }
-</script>
+        }
+
+        // Khởi tạo các nhóm nút
+        setupButtonGroup('category-btn', 'category');
+        setupButtonGroup('size-btn', 'kichthuoc');
+        setupButtonGroup('color-btn', 'mausac');
+        setupButtonGroup('material-btn', 'chatlieu');
+
+        function searchProducts(page = 1) {
+            currentPage = page;
+            const category = document.getElementById('category').value;
+            const kichthuoc = document.getElementById('kichthuoc').value;
+            const mausac = document.getElementById('mausac').value;
+            const chatlieu = document.getElementById('chatlieu').value;
+            const priceFrom = document.getElementById('priceFrom').value;
+            const priceTo = document.getElementById('priceTo').value;
+            const sortBy = document.getElementById('sortBy').value;
+
+            const query = new URLSearchParams({
+                category,
+                kichthuoc,
+                mausac,
+                chatlieu,
+                priceFrom,
+                priceTo,
+                sortBy,
+                page,
+                limit: 10
+            }).toString();
+
+            fetch(`/search?${query}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Lỗi tìm kiếm');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    totalPages = data.totalPages;
+                    const tbody = document.getElementById('productList');
+                    tbody.innerHTML = '';
+
+                    if (data.products.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="8">Không có kết quả tìm kiếm</td></tr>';
+                    } else {
+                        data.products.forEach(p => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${p.id}</td>
+                                <td>${p.name}</td>
+                                <td>${p.giaban}</td>
+                                <td>${p.chatlieu}</td>
+                                <td>${p.mausac.join(', ')}</td>
+                                <td>${p.kichthuoc.join(', ')}</td>
+                                <td><img src="/Images/${p.image}" width="100"></td>
+                                <td><button onclick="viewProductDetail('${p.id}')">Xem chi tiết</button></td>
+                            `;
+                            tbody.appendChild(row);
+                        });
+                    }
+
+                    document.getElementById('pageInfo').textContent = `Trang ${data.currentPage} / ${totalPages}`;
+                    document.getElementById('prevPage').disabled = data.currentPage === 1;
+                    document.getElementById('nextPage').disabled = data.currentPage === totalPages;
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert('Lỗi tìm kiếm sản phẩm');
+                });
+        }
+
+        function changePage(delta) {
+            const newPage = currentPage + delta;
+            if (newPage >= 1 && newPage <= totalPages) {
+                searchProducts(newPage);
+            }
+        }
+
+        function viewProductDetail(id) {
+            window.location.href = `product-detail.html?id=${id}`;
+        }
+    </script>
 </body>
 </html>
