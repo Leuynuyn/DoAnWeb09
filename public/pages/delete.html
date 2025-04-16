@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xoá sản phẩm</title>
+  <link rel="stylesheet" href="/stylesheets/header.css">
+  <link rel="stylesheet" href="/stylesheets/update.css">
+</head>
+<body>
+
+  <div class="header">
+    <nav>
+      <li><a href="/">Trang Chủ</a></li>
+      <li><a href="">Tìm Kiếm Nội Thất</a></li>
+      <li><a href="">Thêm Nội Thất</a></li>
+      <li><a href="update.html">Cập Nhật Nội Thất</a></li>
+      <li><a href="delete.html">Xóa Nội Thất</a></li>
+      <li><a href="list.html">Danh Sách Nội Thất</a></li> 
+    </nav>
+  </div>
+
+  <h1 style="text-align:center;">Xóa sản phẩm</h1>
+  
+  <div class="search-container">
+    <label for="searchId">ID:</label>
+    <input type="text" id="searchId" placeholder="Nhập ID sản phẩm">
+    
+    <label for="searchName">Tên:</label>
+    <input type="text" id="searchName" placeholder="Nhập tên sản phẩm">
+    
+    <button onclick="searchProduct()">Tìm kiếm</button>
+    <button onclick="deleteSelectedProducts()">Xóa các sản phẩm đã chọn</button>
+  </div>
+  
+  <div id="searchResults"></div>
+
+<script>
+
+    // Hàm tìm kiếm sản phẩm theo ID hoặc tên
+    function searchProduct() {
+      const id = document.getElementById("searchId").value.trim();
+      const name = document.getElementById("searchName").value.trim();
+      const query = new URLSearchParams();
+      
+      if (!id && !name) {
+        alert("Vui lòng nhập ID hoặc Tên để tìm kiếm.");
+        return;
+      }
+      
+      if (id) query.append("id", id);
+      if (name) query.append("name", name);
+      
+      fetch(`/search?${query.toString()}&limit=15`)
+        .then(res => res.json())
+        .then(products => {
+          const container = document.getElementById("searchResults");
+          container.innerHTML = "";
+          
+          if (!products || products.length === 0) {
+            container.innerHTML = "<p style='text-align:center;'>Không tìm thấy sản phẩm nào.</p>";
+            return;
+          }
+          
+          let html = `
+            <table border="1" style="width: 100%; margin-top: 20px;">
+              <thead>
+                <tr><th>Chọn</th><th>Mã</th><th>Tên</th></tr>
+              </thead><tbody>
+          `;
+          products.forEach(p => {
+            html += `
+              <tr>
+                <td><input type="checkbox" class="delete-checkbox" value="${p.id}"></td>
+                <td>${p.id}</td>
+                <td>${p.name}</td>
+              </tr>
+            `;
+          });
+          html += "</tbody></table>";
+          container.innerHTML = html;
+        })
+        .catch(err => {
+          console.error("Lỗi khi tìm:", err);
+          alert("Lỗi khi tìm kiếm sản phẩm.");
+        });
+    }
+    
+
+    // Hàm xóa các sản phẩm đã chọn
+    function deleteSelectedProducts() {
+      const checkboxes = document.querySelectorAll(".delete-checkbox:checked");
+      const ids = Array.from(checkboxes).map(cb => cb.value);
+      
+      if (ids.length === 0) {
+        alert("Vui lòng chọn ít nhất một sản phẩm để xóa.");
+        return;
+      }
+      
+      if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?")) {
+      fetch('/deleteProducts', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ ids })
+      })
+      .then(res => res.json())
+      .then(result => {
+        if (result.success) {
+          alert('Xóa sản phẩm thành công!');
+          searchProduct(); // Tìm lại sản phẩm sau khi xóa
+        } else {
+          alert('Xóa sản phẩm thất bại!');
+        }
+      })
+      .catch(err => {
+        console.error("Lỗi khi xóa sản phẩm:", err);
+      });
+      }
+    }
+
+</script>
+
+</body>
+</html>
