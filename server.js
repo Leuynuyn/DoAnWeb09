@@ -93,49 +93,74 @@ app.get('/product/:id', async (req, res) => {
 });
 
 // Tìm kiếm sản phẩm (dùng OR)
-app.get('/read', async (req, res) => {
+// Tìm kiếm sản phẩm với bộ lọc
+app.get('/search', async (req, res) => {
     try {
-        const db = client.db('FurnitureDB');
-        const collection = db.collection('products');
-        const { name, chatlieu, mausac, category, priceFrom, priceTo, image } = req.query;
-        let query = { $or: [] };
+        const db = client.db('finalProject');
+        const collection = db.collection('FurnitureDB');
+        const { category, kichthuoc, mausac, chatlieu, priceFrom, priceTo, sortBy, page = 1, limit = 10 } = req.query;
+        let query = {};
 
-        if (name) query.$or.push({ name: { $regex: name, $options: 'i' } });
-        if (chatlieu) query.$or.push({ chatlieu: { $regex: chatlieu, $options: 'i' } });
-        if (mausac) query.$or.push({ mausac: { $in: [mausac] } });
-        if (category) query.$or.push({ id: { $regex: `^${category}`, $options: 'i' } });
+        // Xử lý bộ lọc loại sản phẩm (category)
+        if (category) {
+            const categories = category.split(',').filter(val => val);
+            if (categories.length > 0) {
+                query.id = { $regex: `^(${categories.join('|')})`, $options: 'i' };
+            }
+        }
+
+        // Xử lý bộ lọc kích thước (kichthuoc)
+        if (kichthuoc) {
+            const sizes = kichthuoc.split(',').filter(val => val);
+            if (sizes.length > 0) {
+                query.kichthuoc = { $in: sizes };
+            }
+        }
+
+        // Xử lý bộ lọc màu sắc (mausac)
+        if (mausac) {
+            const colors = mausac.split(',').filter(val => val);
+            if (colors.length > 0) {
+                query.mausac = { $in: colors };
+            }
+        }
+
+        // Xử lý bộ lọc chất liệu (chatlieu)
+        if (chatlieu) {
+            const materials = chatlieu.split(',').filter(val => val);
+            if (materials.length > 0) {
+                query.chatlieu = { $in: materials };
+            }
+        }
+
+        // Xử lý bộ lọc giá
         if (priceFrom || priceTo) {
             let priceQuery = {};
             if (priceFrom) priceQuery.$gte = parseInt(priceFrom.replace(/[^0-9]/g, ''));
             if (priceTo) priceQuery.$lte = parseInt(priceTo.replace(/[^0-9]/g, ''));
-            if (Object.keys(priceQuery).length > 0) query.$or.push({ giaban: priceQuery });
-        }
-        if (image) query.$or.push({ image: { $regex: image, $options: 'i' } });
-
-        // Nếu không có tiêu chí nào, trả về tất cả sản phẩm
-        if (query.$or.length === 0) {
-            query = {};
+            if (Object.keys(priceQuery).length > 0) query.giaban = priceQuery;
         }
 
-        const products = await collection.find(query).toArray();
-        if (products.length === 0) {
-            return res.send('<p>Không có kết quả tìm kiếm</p>');
-        }
+        // Sắp xếp
+        let sortOption = {};
+        if (sortBy === 'priceAsc') sortOption.giaban = 1;
+        else if (sortBy === 'priceDesc') sortOption.giaban = -1;
 
-        let html = '<table border="1"><tr><th>Mã</th><th>Tên</th><th>Giá bán</th><th>Chất liệu</th><th>Màu sắc</th><th>Kích thước</th><th>Hình ảnh</th></tr>';
-        products.forEach(p => {
-            html += `<tr>
-                <td>${p.id}</td>
-                <td>${p.name}</td>
-                <td>${p.giaban}</td>
-                <td>${p.chatlieu}</td>
-                <td>${p.mausac.join(', ')}</td>
-                <td>${p.kichthuoc.join(', ')}</td>
-                <td><img src="/Images/${p.image}" width="100"></td>
-            </tr>`;
+        // Phân trang
+        const skip = (parseInt(page) - 1) * parseInt(limit);
+        const products = await collection
+            .find(query)
+            .sort(sortOption)
+            .skip(skip)
+            .limit(parseInt(limit))
+            .toArray();
+
+        const totalProducts = await collection.countDocuments(query);
+        res.json({
+            products,
+            totalPages: Math.ceil(totalProducts / parseInt(limit)),
+            currentPage: parseInt(page),
         });
-        html += '</table>';
-        res.send(html);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
