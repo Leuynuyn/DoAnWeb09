@@ -1,22 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create</title>
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <link rel="stylesheet" href="/stylesheets/header.css">
+  <meta charset="UTF-8">
+  <title>Thêm nhiều sản phẩm</title>
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+  <link rel="stylesheet" href="/stylesheets/header.css">
+
 </head>
 <body>
-    <div class="header">
-        <nav>
-            <li><a href="/">Trang Chủ</a></li>
-            <li><a href="read.html">Tìm Kiếm Nội Thất</a></li>
-            <li><a href="create.html">Thêm Nội Thất</a></li>
-            <li><a href="update.html">Cập Nhật Nội Thất</a></li>
-            <li><a href="delete.html">Xóa Nội Thất</a></li>
-            <li><a href="list.html">Danh Sách Nội Thất</a></li> 
-        </nav>
-    </div>
+  <div class="header">
+    <nav>
+      <li><a href="/">Trang Chủ</a></li>
+      <li><a href="read.html">Tìm Kiếm Nội Thất</a></li>
+      <li><a href="create.html">Thêm Nội Thất</a></li>
+      <li><a href="update.html">Cập Nhật Nội Thất</a></li>
+      <li><a href="delete.html">Xóa Nội Thất</a></li>
+      <li><a href="list.html">Danh Sách Nội Thất</a></li>
+    </nav>
+  </div>
+
+  <div style="margin: 30px;">
+    <h1>Thêm nhiều sản phẩm</h1>
+    <table id="productTable" border="1" style="margin-bottom: 20px;">
+      <thead>
+        <tr>
+          <th>ID tự động</th>
+          <th>Danh mục</th>
+          <th>Tên sản phẩm</th>
+          <th>Chất liệu</th>
+          <th>Màu sắc</th>
+          <th>Kích thước</th>
+          <th>Giá gốc</th>
+          <th>Giá bán</th>
+          <th>Mô tả</th>
+          <th>Ảnh</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <button onclick="addRow()">+ Thêm dòng</button>
+    <button onclick="submitAll()">Gửi tất cả</button>
+  </div>
+
+  <script>
+    async function addRow() {
+      const tbody = document.querySelector("#productTable tbody");
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td>
+          <span class="id-display">Đang tạo...</span>
+          <input type="hidden" name="id">
+        </td>
+        <td>
+          <select name="category">
+            <option value="BANN">Bàn</option>
+            <option value="TUQA">Tủ</option>
+            <option value="GIUG">Giường</option>
+          </select>
+        </td>
+        <td><input type="text" name="name" placeholder="VD: Bàn gỗ hoa "></td>
+        <td><input type="text" name="chatlieu" placeholder="VD: Gỗ,Kim loại,.. "></td>
+        <td><input type="text" name="mausac" placeholder="VD: Trắng, Xám, Nâu"></td>
+
+        <td><input type="text" name="kichthuoc" placeholder="VD: 160cm x 200cm, 180cm x 220cm"></td>
+        <td><input type="text" name="giagoc" placeholder="VD: 7,000,000 VND "></td>
+        <td><input type="text" name="giaban" placeholder="VD: 6,000,000 VND "></td>
+        <td><textarea name="motasanpham" rows="2"></textarea></td>
+        <td><input type="file" name="image" accept="image/*"></td>
+        <td><button onclick="this.closest('tr').remove()">🗑</button></td>
+      `;
+
+      tbody.appendChild(row);
+
+      const select = row.querySelector('[name="category"]');
+      select.addEventListener('change', () => updateGeneratedId(row));
+      await updateGeneratedId(row);
+    }
+
+    async function updateGeneratedId(row) {
+      const category = row.querySelector('[name="category"]').value;
+      const idSpan = row.querySelector('.id-display');
+      const idInput = row.querySelector('[name="id"]');
+
+      try {
+        const res = await fetch(`/generate-id?category=${category}`);
+        const data = await res.json();
+        idSpan.textContent = data.id;
+        idInput.value = data.id;
+      } catch (err) {
+        idSpan.textContent = 'Lỗi tạo ID';
+        idInput.value = '';
+      }
+    }
+
+    async function submitAll() {
+      const rows = document.querySelectorAll("#productTable tbody tr");
+
+      for (const row of rows) {
+        const formData = new FormData();
+        formData.append("id", row.querySelector('[name="id"]').value);
+        formData.append("category", row.querySelector('[name="category"]').value);
+        formData.append("name", row.querySelector('[name="name"]').value);
+        formData.append("chatlieu", row.querySelector('[name="chatlieu"]').value.trim());
+        formData.append("mausac", row.querySelector('[name="mausac"]').value.trim());
+        formData.append("kichthuoc", row.querySelector('[name="kichthuoc"]').value.trim());
+        formData.append("giagoc", row.querySelector('[name="giagoc"]').value);
+        formData.append("giaban", row.querySelector('[name="giaban"]').value);
+        formData.append("motasanpham", row.querySelector('[name="motasanpham"]').value);
+
+        const imageFile = row.querySelector('[name="image"]').files[0];
+        if (imageFile) {
+          formData.append("image", imageFile);
+        }
+
+        const response = await fetch("/create", {
+          method: "POST",
+          body: formData
+        });
+
+        const result = await response.json();
+        console.log("Tạo:", result.message);
+      }
+
+      alert("Đã thêm tất cả sản phẩm!");
+      document.querySelector("#productTable tbody").innerHTML = "";
+      addRow(); // Thêm dòng mới luôn
+    }
+
+    window.onload = () => addRow();
+  </script>
 </body>
 </html>

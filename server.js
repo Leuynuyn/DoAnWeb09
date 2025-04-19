@@ -44,7 +44,9 @@ app.get('/product-detail.html', (req, res) => {
 app.get('/read.html', (req, res) => {
     res.sendFile(__dirname + '/public/pages/read.html')
 });
-
+app.get('/create.html', (req, res) => {
+  res.sendFile(__dirname + '/public/pages/create.html');
+});
 //Lay danh sách sản phẩm
 app.get('/list', async (req, res) => {
     try {
@@ -288,6 +290,64 @@ app.delete('/deleteProducts', async (req, res) => {
   } catch (err) {
     console.error('Lỗi khi xoá sản phẩm:', err);
     res.status(500).json({ error: err.message });
+  }
+});
+
+// ------------------- API Thêm sản phẩm --------------------
+app.get('/generate-id', async (req, res) => {
+  try {
+    const category = req.query.category || 'SP';
+    const db = client.db('finalProject');
+    const collection = db.collection('FurnitureDB');
+    const count = await collection.countDocuments({ id: { $regex: `^${category}` } });
+    const newId = `${category}${(count + 1).toString().padStart(4, '0')}`;
+    res.json({ id: newId });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Không thể tạo ID' });
+  }
+});
+
+// Route tạo sản phẩm với upload ảnh
+app.post('/create', upload.single('image'), async (req, res) => {
+  try {
+    const db = client.db('finalProject');
+    const collection = db.collection('FurnitureDB');
+
+    // Lấy dữ liệu từ req.body (nhận dạng dạng text từ FormData)
+    const { id, name, chatlieu, mausac, kichthuoc, category, giagoc, giaban, motasanpham } = req.body;
+
+    // Nếu không có id hoặc id rỗng, tự tạo ID
+    const prefix = category || 'SP';
+    const count = await collection.countDocuments({ id: { $regex: `^${prefix}` } });
+    const newId = id && id.trim() !== "" ? id : `${prefix}${(count + 1).toString().padStart(4, '0')}`;
+
+    // Tách các trường chuỗi thành mảng
+    const mausacArr = mausac ? mausac.split(',').map(m => m.trim()) : [];
+    const kichthuocArr = kichthuoc ? kichthuoc.split(',').map(k => k.trim()) : [];
+
+    const newProduct = {
+      id: newId,
+      name,
+      chatlieu,
+      mausac: mausacArr,
+      kichthuoc: kichthuocArr,
+      category,
+      giagoc,
+      giaban,
+      motasanpham,
+      image: req.file ? req.file.filename : '',
+      soluongdaban: 0,
+      cauhoi: [],
+      nhanxet: [],
+      createdAt: new Date()
+    };
+
+    await collection.insertOne(newProduct);
+    res.json({ message: 'Thêm sản phẩm thành công', product: newProduct });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Lỗi khi thêm sản phẩm' });
   }
 });
 
