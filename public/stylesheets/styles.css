@@ -59,3 +59,32 @@ img {
 .searchSp{
     margin-left: 40%;
 }
+
+
+
+
+
+table#productTable {
+    width: 100%;
+    table-layout: fixed;
+    font-size: 14px;
+  }
+  table#productTable input,
+  table#productTable select,
+  table#productTable textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  table#productTable th,
+  table#productTable td {
+    padding: 5px;
+    vertical-align: top;
+  }
+  td:last-child button {
+    width: 100%;
+  }
+  .id-display {
+    font-size: 13px;
+    font-weight: bold;
+    color: green;
+  }
