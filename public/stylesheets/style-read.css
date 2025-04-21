@@ -1,72 +1,105 @@
-.searchSp {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.searchSp { 
+    padding: 20px; 
+    max-width: 1200px; 
+    margin: 0 auto;
 }
-.searchSp h1 {
+.searchSp h1 { 
     text-align: center;
 }
-.filter-group {
-    margin-bottom: 20px;
+.filter-group { 
+    margin-bottom: 15px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    flex-wrap: wrap;
 }
-.filter-group label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
+.filter-group label { 
+    margin-right: 10px; 
+    font-weight: bold; 
 }
-.filter-group button {
-    padding: 8px 16px;
-    margin: 5px;
-    border: none;
-    border-radius: 4px;
-    background-color: #5988b9;
-    color: white;
-    cursor: pointer;
-}
-.filter-group button.active {
-    background-color: #0056b3;
-}
-.filter-group button:hover {
-    background-color: #0056b3;
-}
-.filter-group input {
-    padding: 8px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.filter-group select, .filter-group input[type="text"] { 
+    padding: 5px; 
+    margin-right: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
     width: 200px;
 }
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-th {
-    background-color: #3e898c;
+.filter-group button { 
+    padding: 10px 30px;
+    background-color: #4CAF50;
     color: white;
-}
-#pagination {
-    text-align: center;
-    margin-top: 20px;
-}
-#pagination button {
-    padding: 8px 16px;
-    margin: 0 5px;
     border: none;
-    border-radius: 4px;
-    background-color: #5988b9;
-    color: white;
-    cursor: pointer;
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-size: 16px;
 }
-#pagination button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+.filter-group button:hover { 
+    background-color: #45a049;
+}
+#productTable { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+}
+#productTable th, #productTable td { 
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: left; 
+}
+#productTable th { 
+    background-color: #f2f2f2; 
+}
+#pagination { 
+    margin-top: 20px; 
+    text-align: center; 
+}
+#pagination button { 
+    padding: 5px 10px; 
+    margin: 0 5px; 
+    cursor: pointer; 
+}
+#pagination button:disabled { 
+    background-color: #ccc; 
+    cursor: not-allowed; 
+}
+#selectedFilters { 
+    margin: 10px 0; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
+.filter-tag { 
+    background-color: #f0f0f0; 
+    padding: 5px 10px; 
+    border-radius: 15px; 
+    display: flex; 
+    align-items: center; 
+    gap: 5px; 
+}
+.filter-tag span { 
+    font-size: 14px; 
+}
+.filter-tag button { 
+    background: none; 
+    border: none; 
+    color: #888; 
+    cursor: pointer; 
+    font-size: 14px; 
+    padding: 0; 
+}
+.filter-tag button:hover { 
+    color: #000; 
+}
+#clearFilters { 
+    background: none; 
+    border: none; 
+    color: #007bff; 
+    cursor: pointer; 
+    font-size: 14px; 
+    margin-left: 10px; 
+}
+#clearFilters:hover { 
+    text-decoration: underline; 
 }
