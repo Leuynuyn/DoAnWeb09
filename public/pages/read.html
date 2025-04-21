@@ -20,59 +20,68 @@
     </div>
 
     <div class="searchSp">
-        <h1>Tìm Kiếm Sản Phẩm</h1>
+        <h1>Tất cả sản phẩm MOHO</h1>
         <form id="searchForm">
+            <!-- Text input for searching by product name -->
             <div class="filter-group">
-                <label>Loại Sản Phẩm:</label>
-                <button type="button" class="category-btn" data-value="">Tất cả</button>
-                <button type="button" class="category-btn" data-value="BANN">Bàn</button>
-                <button type="button" class="category-btn" data-value="TUQA">Tủ</button>
-                <button type="button" class="category-btn" data-value="GIUG">Giường</button>
-                <input type="hidden" id="category" name="category">
+                <label>Sản phẩm:</label>
+                <input type="text" id="name" name="name" placeholder="Nhập tên sản phẩm">
             </div>
+
+            <!-- Dropdown for category -->
             <div class="filter-group">
-                <label>Kích Thước:</label>
-                <button type="button" class="size-btn" data-value="">Tất cả</button>
-                <button type="button" class="size-btn" data-value="120cm x 60cm">120cm x 60cm</button>
-                <button type="button" class="size-btn" data-value="140cm x 70cm">140cm x 70cm</button>
-                <button type="button" class="size-btn" data-value="160cm x 200cm">160cm x 200cm</button>
-                <button type="button" class="size-btn" data-value="180cm x 220cm">180cm x 220cm</button>
-                <input type="hidden" id="kichthuoc" name="kichthuoc">
+                <label>Bộ lọc:</label>
+                <select id="category" name="category">
+                    <option value="" disabled selected>Chọn danh mục</option>
+                    <option value="BANN">Bàn</option>
+                    <option value="TUQA">Tủ</option>
+                    <option value="GIUG">Giường</option>
+                </select>
             </div>
+
+            <!-- Dropdown for price range -->
             <div class="filter-group">
-                <label>Màu Sắc:</label>
-                <button type="button" class="color-btn" data-value="">Tất cả</button>
-                <button type="button" class="color-btn" data-value="xám">Xám</button>
-                <button type="button" class="color-btn" data-value="nâu tự nhiên">Nâu tự nhiên</button>
-                <button type="button" class="color-btn" data-value="trắng">Trắng</button>
-                <input type="hidden" id="mausac" name="mausac">
+                <label>Giá sản phẩm:</label>
+                <select id="priceRange" name="priceRange">
+                    <option value="" disabled selected>Chọn giá</option>
+                    <option value="500000-1000000">500,000đ - 1,000,000đ</option>
+                    <option value="1000000-5000000">1,000,000đ - 5,000,000đ</option>
+                    <option value="5000000-10000000">5,000,000đ - 10,000,000đ</option>
+                </select>
             </div>
+
+            <!-- Dropdown for size -->
             <div class="filter-group">
-                <label>Chất Liệu:</label>
-                <button type="button" class="material-btn" data-value="">Tất cả</button>
-                <button type="button" class="material-btn" data-value="Gỗ công nghiệp">Gỗ công nghiệp</button>
-                <button type="button" class="material-btn" data-value="Gỗ sồi">Gỗ sồi</button>
-                <button type="button" class="material-btn" data-value="Kim loại">Kim loại</button>
-                <button type="button" class="material-btn" data-value="Da">Da</button>
-                <button type="button" class="material-btn" data-value="Nhựa">Nhựa</button>
-                <button type="button" class="material-btn" data-value="Gỗ tự nhiên">Gỗ tự nhiên</button>
-                <button type="button" class="material-btn" data-value="Gỗ ép">Gỗ ép</button>
-                <input type="hidden" id="chatlieu" name="chatlieu">
+                <label>Kích thước:</label>
+                <select id="kichthuoc" name="kichthuoc">
+                    <option value="" disabled selected>Chọn kích thước</option>
+                    <option value="120cm x 60cm">120cm x 60cm</option>
+                    <option value="140cm x 70cm">140cm x 70cm</option>
+                    <option value="160cm x 200cm">160cm x 200cm</option>
+                    <option value="180cm x 220cm">180cm x 220cm</option>
+                </select>
             </div>
-            <div class="filter-group">
-                <label>Giá:</label>
-                <input type="text" id="priceFrom" name="priceFrom" placeholder="VD: 4,000,000">
-                <input type="text" id="priceTo" name="priceTo" placeholder="VD: 7,000,000">
-            </div>
+
+            <!-- Dropdown for sorting -->
             <div class="filter-group">
                 <label>Sắp xếp:</label>
                 <select id="sortBy" name="sortBy">
+                    <option value="" disabled selected>Chọn cách sắp xếp</option>
                     <option value="priceAsc">Giá tăng dần</option>
                     <option value="priceDesc">Giá giảm dần</option>
                 </select>
             </div>
-            <button type="button" onclick="searchProducts()">Tìm kiếm</button>
+
+            <div class="filter-group">
+                <button type="button" onclick="searchProducts()">Tìm kiếm</button>
+            </div>
         </form>
+
+        <!-- Khu vực hiển thị các bộ lọc đã chọn -->
+        <div id="selectedFilters">
+            <!-- Các tag bộ lọc sẽ được thêm động bằng JavaScript -->
+        </div>
+
         <div id="searchResult">
             <table id="productTable" border="1">
                 <thead>
@@ -80,8 +89,6 @@
                         <th>Mã</th>
                         <th>Tên</th>
                         <th>Giá bán</th>
-                        <th>Chất liệu</th>
-                        <th>Màu sắc</th>
                         <th>Kích thước</th>
                         <th>Hình ảnh</th>
                         <th>Chi tiết</th>
@@ -96,68 +103,122 @@
             </div>
         </div>
     </div>
+
     <script>
         let currentPage = 1;
         let totalPages = 1;
 
-        // Quản lý trạng thái chọn nút
-        function setupButtonGroup(buttonClass, inputId) {
-            const buttons = document.querySelectorAll(`.${buttonClass}`);
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const isAllButton = button.dataset.value === '';
-                    const allButton = document.querySelector(`.${buttonClass}[data-value=""]`);
+        // Hàm cập nhật các bộ lọc đã chọn
+        function updateSelectedFilters() {
+            const selectedFiltersDiv = document.getElementById('selectedFilters');
+            selectedFiltersDiv.innerHTML = ''; // Xóa các tag cũ
 
-                    if (isAllButton) {
-                        // Nếu nhấn nút "Tất cả", bỏ chọn tất cả các nút khác
-                        buttons.forEach(btn => {
-                            if (btn !== button) btn.classList.remove('active');
-                        });
-                        button.classList.add('active');
-                        document.getElementById(inputId).value = '';
-                    } else {
-                        // Nếu nhấn nút cụ thể, bỏ chọn nút "Tất cả"
-                        if (allButton) allButton.classList.remove('active');
-                        // Toggle trạng thái active của nút được nhấn
-                        button.classList.toggle('active');
-                        // Lấy tất cả các nút đang active (trừ nút "Tất cả")
-                        const selectedValues = Array.from(document.querySelectorAll(`.${buttonClass}.active`))
-                            .filter(btn => btn.dataset.value !== '')
-                            .map(btn => btn.dataset.value);
-                        // Cập nhật trường ẩn
-                        document.getElementById(inputId).value = selectedValues.join(',');
+            const filters = [
+                { id: 'category', label: 'Danh mục' },
+                { id: 'priceRange', label: 'Giá sản phẩm' },
+                { id: 'kichthuoc', label: 'Kích thước' }
+            ];
+
+            filters.forEach(filter => {
+                const selectElement = document.getElementById(filter.id);
+                const value = selectElement.value;
+                if (value) {
+                    const displayValue = filter.id === 'category' 
+                        ? selectElement.options[selectElement.selectedIndex].text
+                        : value;
+                    if (displayValue) {
+                        const tag = document.createElement('div');
+                        tag.className = 'filter-tag';
+                        tag.innerHTML = `
+                            <span>${filter.label}: ${displayValue}</span>
+                            <button onclick="clearFilter('${filter.id}')">×</button>
+                        `;
+                        selectedFiltersDiv.appendChild(tag);
                     }
-                });
+                }
             });
+
+            // Thêm nút "Xóa hết" nếu có ít nhất một bộ lọc được chọn
+            const hasFilters = selectedFiltersDiv.children.length > 0;
+            if (hasFilters) {
+                const clearAllButton = document.createElement('button');
+                clearAllButton.id = 'clearFilters';
+                clearAllButton.textContent = 'Xóa hết';
+                clearAllButton.onclick = clearAllFilters;
+                selectedFiltersDiv.appendChild(clearAllButton);
+            }
         }
 
-        // Khởi tạo các nhóm nút
-        setupButtonGroup('category-btn', 'category');
-        setupButtonGroup('size-btn', 'kichthuoc');
-        setupButtonGroup('color-btn', 'mausac');
-        setupButtonGroup('material-btn', 'chatlieu');
+        // Hàm xóa một bộ lọc cụ thể
+        function clearFilter(filterId) {
+            const selectElement = document.getElementById(filterId);
+            selectElement.value = ''; // Reset dropdown về giá trị mặc định
+            updateSelectedFilters(); // Cập nhật lại hiển thị
+            searchProducts(); // Tìm kiếm lại
+        }
+
+        // Hàm xóa tất cả bộ lọc
+        function clearAllFilters() {
+            const filters = ['category', 'priceRange', 'kichthuoc', 'sortBy'];
+            filters.forEach(filterId => {
+                document.getElementById(filterId).value = '';
+            });
+            document.getElementById('name').value = ''; // Reset ô tìm kiếm
+            updateSelectedFilters();
+            searchProducts();
+        }
+
+        // Thêm sự kiện change cho các dropdown
+        document.querySelectorAll('select[name="category"], select[name="priceRange"], select[name="kichthuoc"], select[name="sortBy"]').forEach(select => {
+            select.addEventListener('change', () => {
+                // Khi thay đổi dropdown, reset ô tìm kiếm
+                document.getElementById('name').value = '';
+                updateSelectedFilters();
+                searchProducts();
+            });
+        });
+
+        // Thêm sự kiện input cho ô tìm kiếm tên sản phẩm
+        document.getElementById('name').addEventListener('input', () => {
+            // Khi nhập vào ô tìm kiếm, reset các dropdown
+            const filters = ['category', 'priceRange', 'kichthuoc', 'sortBy'];
+            filters.forEach(filterId => {
+                document.getElementById(filterId).value = '';
+            });
+            updateSelectedFilters();
+            searchProducts();
+        });
 
         function searchProducts(page = 1) {
             currentPage = page;
+
+            // Get filter values
+            const name = document.getElementById('name').value;
             const category = document.getElementById('category').value;
+            const priceRange = document.getElementById('priceRange').value;
             const kichthuoc = document.getElementById('kichthuoc').value;
-            const mausac = document.getElementById('mausac').value;
-            const chatlieu = document.getElementById('chatlieu').value;
-            const priceFrom = document.getElementById('priceFrom').value;
-            const priceTo = document.getElementById('priceTo').value;
             const sortBy = document.getElementById('sortBy').value;
 
-            const query = new URLSearchParams({
-                category,
-                kichthuoc,
-                mausac,
-                chatlieu,
-                priceFrom,
-                priceTo,
-                sortBy,
-                page,
-                limit: 10
-            }).toString();
+            // Nếu có giá trị trong ô tìm kiếm, chỉ gửi tham số name
+            const queryParams = {};
+            if (name) {
+                queryParams.name = name;
+            } else {
+                // Nếu không có tìm kiếm theo tên, gửi các bộ lọc khác
+                if (category) queryParams.category = category;
+                if (kichthuoc) queryParams.kichthuoc = kichthuoc;
+                if (priceRange) {
+                    const [priceFrom, priceTo] = priceRange.split('-');
+                    queryParams.priceFrom = priceFrom;
+                    queryParams.priceTo = priceTo;
+                }
+            }
+            if (sortBy) queryParams.sortBy = sortBy;
+
+            queryParams.page = page;
+            queryParams.limit = 10;
+
+            const query = new URLSearchParams(queryParams).toString();
 
             fetch(`/search?${query}`)
                 .then(response => {
@@ -172,7 +233,7 @@
                     tbody.innerHTML = '';
 
                     if (data.products.length === 0) {
-                        tbody.innerHTML = '<tr><td colspan="8">Không có kết quả tìm kiếm</td></tr>';
+                        tbody.innerHTML = '<tr><td colspan="6">Sản phẩm không tồn tại</td></tr>';
                     } else {
                         data.products.forEach(p => {
                             const row = document.createElement('tr');
@@ -180,8 +241,6 @@
                                 <td>${p.id}</td>
                                 <td>${p.name}</td>
                                 <td>${p.giaban}</td>
-                                <td>${p.chatlieu}</td>
-                                <td>${p.mausac.join(', ')}</td>
                                 <td>${p.kichthuoc.join(', ')}</td>
                                 <td><img src="/Images/${p.image}" width="100"></td>
                                 <td><button onclick="viewProductDetail('${p.id}')">Xem chi tiết</button></td>

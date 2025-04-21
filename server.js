@@ -94,80 +94,79 @@ app.get('/product/:id', async (req, res) => {
     }
 });
 
-// Tìm kiếm sản phẩm (dùng OR)
+
 // Tìm kiếm sản phẩm với bộ lọc
 app.get('/search', async (req, res) => {
-    try {
-        const db = client.db('finalProject');
-        const collection = db.collection('FurnitureDB');
-        const { category, kichthuoc, mausac, chatlieu, priceFrom, priceTo, sortBy, page = 1, limit = 10 } = req.query;
-        let query = {};
+  try {
+      const db = client.db('finalProject');
+      const collection = db.collection('FurnitureDB');
+      const { name, category, kichthuoc, priceFrom, priceTo, sortBy, page = 1, limit = 10 } = req.query;
+      let query = {};
 
-        // Xử lý bộ lọc loại sản phẩm (category)
-        if (category) {
-            const categories = category.split(',').filter(val => val);
-            if (categories.length > 0) {
-                query.id = { $regex: `^(${categories.join('|')})`, $options: 'i' };
-            }
-        }
+      // Nếu có tìm kiếm theo tên, chỉ tìm theo tên và bỏ qua các bộ lọc khác
+      if (name) {
+          console.log("Tìm kiếm tên sản phẩm:", name); // Debug
+          query.name = { $regex: name, $options: 'i' }; // Tìm kiếm trực tiếp trên trường name
+      } else {
+          // Xử lý bộ lọc loại sản phẩm (category)
+          if (category) {
+              const categories = category.split(',').filter(val => val);
+              if (categories.length > 0) {
+                  query.id = { $regex: `^(${categories.join('|')})`, $options: 'i' };
+              }
+          }
 
-        // Xử lý bộ lọc kích thước (kichthuoc)
-        if (kichthuoc) {
-            const sizes = kichthuoc.split(',').filter(val => val);
-            if (sizes.length > 0) {
-                query.kichthuoc = { $in: sizes };
-            }
-        }
+          // Xử lý bộ lọc kích thước (kichthuoc)
+          if (kichthuoc) {
+              const sizes = kichthuoc.split(',').filter(val => val);
+              if (sizes.length > 0) {
+                  query.kichthuoc = { $in: sizes };
+              }
+          }
 
-        // Xử lý bộ lọc màu sắc (mausac)
-        if (mausac) {
-            const colors = mausac.split(',').filter(val => val);
-            if (colors.length > 0) {
-                query.mausac = { $in: colors };
-            }
-        }
+          // Xử lý bộ lọc giá
+          if (priceFrom || priceTo) {
+              let priceQuery = {};
+              if (priceFrom) priceQuery.$gte = parseInt(priceFrom);
+              if (priceTo) priceQuery.$lte = parseInt(priceTo);
+              if (Object.keys(priceQuery).length > 0) query.giaban = priceQuery;
+          }
+      }
 
-        // Xử lý bộ lọc chất liệu (chatlieu)
-        if (chatlieu) {
-            const materials = chatlieu.split(',').filter(val => val);
-            if (materials.length > 0) {
-                query.chatlieu = { $in: materials };
-            }
-        }
+      // Sắp xếp
+      let sortOption = {};
+      if (sortBy === 'priceAsc') sortOption.giaban = 1;
+      else if (sortBy === 'priceDesc') sortOption.giaban = -1;
 
-        // Xử lý bộ lọc giá
-        if (priceFrom || priceTo) {
-            let priceQuery = {};
-            if (priceFrom) priceQuery.$gte = parseInt(priceFrom.replace(/[^0-9]/g, ''));
-            if (priceTo) priceQuery.$lte = parseInt(priceTo.replace(/[^0-9]/g, ''));
-            if (Object.keys(priceQuery).length > 0) query.giaban = priceQuery;
-        }
+      // Phân trang
+      const skip = (parseInt(page) - 1) * parseInt(limit);
+      const products = await collection
+          .find(query)
+          .sort(sortOption)
+          .skip(skip)
+          .limit(parseInt(limit))
+          .toArray();
 
-        // Sắp xếp
-        let sortOption = {};
-        if (sortBy === 'priceAsc') sortOption.giaban = 1;
-        else if (sortBy === 'priceDesc') sortOption.giaban = -1;
+      // Chuyển đổi giaban thành số nếu nó là chuỗi
+      products.forEach(product => {
+          if (typeof product.giaban === 'string') {
+              product.giaban = parseInt(product.giaban.replace(/[^0-9]/g, ''));
+          }
+      });
 
-        // Phân trang
-        const skip = (parseInt(page) - 1) * parseInt(limit);
-        const products = await collection
-            .find(query)
-            .sort(sortOption)
-            .skip(skip)
-            .limit(parseInt(limit))
-            .toArray();
+      // Debug: In ra danh sách sản phẩm tìm thấy
+      console.log("Sản phẩm tìm thấy:", products.map(p => p.name));
 
-        const totalProducts = await collection.countDocuments(query);
-        res.json({
-            products,
-            totalPages: Math.ceil(totalProducts / parseInt(limit)),
-            currentPage: parseInt(page),
-        });
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
+      const totalProducts = await collection.countDocuments(query);
+      res.json({
+          products,
+          totalPages: Math.ceil(totalProducts / parseInt(limit)),
+          currentPage: parseInt(page),
+      });
+  } catch (err) {
+      res.status(500).json({ error: err.message });
+  }
 });
-
 
 // ------------------- API Tìm kiếm sản phẩm --------------------
 
