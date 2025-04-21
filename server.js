@@ -181,7 +181,7 @@ function removeDiacritics(str) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-app.get('/searchForUpdate', async (req, res) => {
+app.get('/searchForProductSs', async (req, res) => {
     try {
         const db = client.db('finalProject');
         const collection = db.collection('FurnitureDB');
@@ -236,7 +236,17 @@ app.get('/getProductById', async (req, res) => {
   
 
 // Cập nhật sản phẩm
-const upload = multer({ dest: 'public/Images/' }); // Thư mục lưu trữ ảnh
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/images/'); // Thư mục lưu trữ ảnh
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname); // Giữ nguyên tên tệp gốc
+    }
+});
+
+const upload = multer({ storage: storage });
+
 app.post('/updateProduct', upload.single('image'), async (req, res) => {
   try {
     const db = client.db('finalProject');
@@ -252,7 +262,7 @@ app.post('/updateProduct', upload.single('image'), async (req, res) => {
       motasanpham: motasanpham,
     };
     if (req.file) {
-      updateData.image = req.file.filename; // Lưu tên file ảnh mới
+      updateData.image = req.file.originalname; // Lưu tên file ảnh mới với phần mở rộng
     }
     const result = await collection.updateOne(
       { id: id },
