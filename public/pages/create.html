@@ -21,6 +21,11 @@
 
   <div style="margin: 30px;">
     <h1>Thêm nhiều sản phẩm</h1>
+
+    <input type="file" id="jsonFile" accept=".json">
+    <button onclick="importFromJson()">📂 Nhập từ JSON</button>
+    <br><br>
+
     <table id="productTable" border="1" style="margin-bottom: 20px;">
       <thead>
         <tr>
@@ -45,7 +50,9 @@
   </div>
 
   <script>
-    async function addRow() {
+    window.onload = () => addRow();
+
+    async function addRow(product = {}) {
       const tbody = document.querySelector("#productTable tbody");
       const row = document.createElement("tr");
 
@@ -61,14 +68,13 @@
             <option value="GIUG">Giường</option>
           </select>
         </td>
-        <td><input type="text" name="name" placeholder="VD: Bàn gỗ hoa "></td>
-        <td><input type="text" name="chatlieu" placeholder="VD: Gỗ,Kim loại,.. "></td>
+        <td><input type="text" name="name" placeholder="VD: Bàn gỗ xoan đào"></td>
+        <td><input type="text" name="chatlieu" placeholder="VD: Gỗ sồi, Kim loại"></td>
         <td><input type="text" name="mausac" placeholder="VD: Trắng, Xám, Nâu"></td>
-
-        <td><input type="text" name="kichthuoc" placeholder="VD: 160cm x 200cm, 180cm x 220cm"></td>
-        <td><input type="text" name="giagoc" placeholder="VD: 7,000,000 VND "></td>
-        <td><input type="text" name="giaban" placeholder="VD: 6,000,000 VND "></td>
-        <td><textarea name="motasanpham" rows="2"></textarea></td>
+        <td><input type="text" name="kichthuoc" placeholder="VD: 120x60, 160x200"></td>
+        <td><input type="text" name="giagoc" placeholder="VD: 7,000,000 VND"></td>
+        <td><input type="text" name="giaban" placeholder="VD: 6,000,000 VND"></td>
+        <td><textarea name="motasanpham" rows="2" placeholder="VD: Mô tả chi tiết..."></textarea></td>
         <td><input type="file" name="image" accept="image/*"></td>
         <td><button onclick="this.closest('tr').remove()">🗑</button></td>
       `;
@@ -76,6 +82,15 @@
       tbody.appendChild(row);
 
       const select = row.querySelector('[name="category"]');
+      select.value = product.category || "BANN";
+      row.querySelector('[name="name"]').value = product.name || "";
+      row.querySelector('[name="chatlieu"]').value = product.chatlieu || "";
+      row.querySelector('[name="mausac"]').value = product.mausac || "";
+      row.querySelector('[name="kichthuoc"]').value = product.kichthuoc || "";
+      row.querySelector('[name="giagoc"]').value = product.giagoc || "";
+      row.querySelector('[name="giaban"]').value = product.giaban || "";
+      row.querySelector('[name="motasanpham"]').value = product.motasanpham || "";
+
       select.addEventListener('change', () => updateGeneratedId(row));
       await updateGeneratedId(row);
     }
@@ -100,6 +115,34 @@
       const rows = document.querySelectorAll("#productTable tbody tr");
 
       for (const row of rows) {
+        // RÀNG BUỘC: kiểm tra dữ liệu đầy đủ
+        const required = ['name', 'chatlieu', 'mausac', 'kichthuoc', 'giagoc', 'giaban', 'motasanpham'];
+        let hasEmpty = false;
+
+        for (const name of required) {
+          const input = row.querySelector(`[name="${name}"]`);
+          if (!input.value.trim()) {
+            input.style.border = '2px solid red';
+            hasEmpty = true;
+          } else {
+            input.style.border = '';
+          }
+        }
+
+        const image = row.querySelector('[name="image"]');
+        if (!image.files.length) {
+          image.style.border = '2px solid red';
+          hasEmpty = true;
+        } else {
+          image.style.border = '';
+        }
+
+        if (hasEmpty) {
+          alert("Vui lòng điền đầy đủ thông tin và chọn ảnh!");
+          return;
+        }
+
+        // Gửi lên server
         const formData = new FormData();
         formData.append("id", row.querySelector('[name="id"]').value);
         formData.append("category", row.querySelector('[name="category"]').value);
@@ -111,10 +154,8 @@
         formData.append("giaban", row.querySelector('[name="giaban"]').value);
         formData.append("motasanpham", row.querySelector('[name="motasanpham"]').value);
 
-        const imageFile = row.querySelector('[name="image"]').files[0];
-        if (imageFile) {
-          formData.append("image", imageFile);
-        }
+        const imageFile = image.files[0];
+        formData.append("image", imageFile);
 
         const response = await fetch("/create", {
           method: "POST",
@@ -125,12 +166,32 @@
         console.log("Tạo:", result.message);
       }
 
-      alert("Đã thêm tất cả sản phẩm!");
+      alert("✅ Đã thêm tất cả sản phẩm!");
       document.querySelector("#productTable tbody").innerHTML = "";
-      addRow(); // Thêm dòng mới luôn
+      addRow();
     }
 
-    window.onload = () => addRow();
+    function importFromJson() {
+      const fileInput = document.getElementById("jsonFile");
+      const file = fileInput.files[0];
+      if (!file) {
+        alert("Vui lòng chọn file JSON.");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        try {
+          const data = JSON.parse(e.target.result);
+          for (const product of data) {
+            await addRow(product);
+          }
+        } catch (err) {
+          alert("Lỗi định dạng JSON: " + err.message);
+        }
+      };
+      reader.readAsText(file);
+    }
   </script>
 </body>
 </html>
