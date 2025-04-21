@@ -51,7 +51,7 @@
         if (id) query.append("id", id);
         if (name) query.append("name", name);
         
-        fetch(`/searchForUpdate?${query.toString()}&limit=15`)
+        fetch(`/searchForProductSs?${query.toString()}&limit=15`)
           .then(res => res.json())
           .then(products => {
             const container = document.getElementById("searchResults");
@@ -65,7 +65,11 @@
             let html = `
               <table border="1" style="width: 100%; margin-top: 20px;">
                 <thead>
-                  <tr><th>Chọn</th><th>Mã</th><th>Tên</th></tr>
+                  <tr>
+                    <th>Chọn</th>
+                    <th>Mã</th>
+                    <th>Tên</th>
+                  </tr>
                 </thead><tbody>
             `;
             products.forEach(p => {

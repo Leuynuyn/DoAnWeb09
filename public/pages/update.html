@@ -111,7 +111,7 @@
       if (id) query.append("id", id);
       if (name) query.append("name", name);
   
-      fetch(`/searchForUpdate?${query.toString()}&limit=15`)
+      fetch(`/searchForProductSs?${query.toString()}&limit=15`)
         .then(res => res.json())
         .then(products => {
           const container = document.getElementById("searchResults");
@@ -154,7 +154,6 @@
 
     // Hiện form cập nhật và điền dữ liệu vào form
     function editProduct(id) {
-      console.log("Sản phẩm ID: ", id); 
       fetch(`/getProductById?id=${id}`)
         .then(res => res.json())
         .then(product => {
@@ -167,7 +166,8 @@
             document.getElementById('productColors').value = product.mausac.join(', ');
             document.getElementById('productSizes').value = product.kichthuoc.join(', ');
             document.getElementById('productDescription').value = product.motasanpham;
-            document.getElementById('productImagePreview').src = `/Images/${product.image}` || '';
+            document.getElementById('productImagePreview').src = `/images/${product.image}` || '';
+            
             document.getElementById('updateFormContainer').style.display = 'block';
             document.getElementById('searchResults').style.display = 'none'; 
           } else {
