@@ -87,4 +87,6 @@ table#productTable {
     font-size: 13px;
     font-weight: bold;
     color: green;
+    display: block;
+    margin-bottom: 4px;
   }
