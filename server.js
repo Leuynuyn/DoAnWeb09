@@ -313,21 +313,11 @@ app.post('/create', upload.single('image'), async (req, res) => {
   try {
     const db = client.db('finalProject');
     const collection = db.collection('FurnitureDB');
-
-    // Lấy dữ liệu từ req.body (nhận dạng dạng text từ FormData)
     const { id, name, chatlieu, mausac, kichthuoc, category, giagoc, giaban, motasanpham } = req.body;
-
-    // Nếu không có id hoặc id rỗng, tự tạo ID
-    const prefix = category || 'SP';
-    const count = await collection.countDocuments({ id: { $regex: `^${prefix}` } });
-    const newId = id && id.trim() !== "" ? id : `${prefix}${(count + 1).toString().padStart(4, '0')}`;
-
-    // Tách các trường chuỗi thành mảng
     const mausacArr = mausac ? mausac.split(',').map(m => m.trim()) : [];
     const kichthuocArr = kichthuoc ? kichthuoc.split(',').map(k => k.trim()) : [];
-
     const newProduct = {
-      id: newId,
+      id ,
       name,
       chatlieu,
       mausac: mausacArr,
@@ -342,7 +332,6 @@ app.post('/create', upload.single('image'), async (req, res) => {
       nhanxet: [],
       createdAt: new Date()
     };
-
     await collection.insertOne(newProduct);
     res.json({ message: 'Thêm sản phẩm thành công', product: newProduct });
   } catch (err) {
