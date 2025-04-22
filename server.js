@@ -126,10 +126,22 @@ app.get('/search', async (req, res) => {
 
           // Xử lý bộ lọc giá
           if (priceFrom || priceTo) {
-              let priceQuery = {};
-              if (priceFrom) priceQuery.$gte = parseInt(priceFrom);
-              if (priceTo) priceQuery.$lte = parseInt(priceTo);
-              if (Object.keys(priceQuery).length > 0) query.giaban = priceQuery;
+              // let priceQuery = {};
+              // if (priceFrom) priceQuery.$gte = parseInt(priceFrom);
+              // if (priceTo) priceQuery.$lte = parseInt(priceTo);
+              // if (Object.keys(priceQuery).length > 0) query.giaban = priceQuery;
+
+              // query.giaban = {};
+              // if (priceFrom) query.giaban.$gte = parseInt(priceFrom);
+              // if (priceTo) query.giaban.$lte = parseInt(priceTo);
+
+              query.giaban = {};
+            if (priceFrom && !isNaN(parseInt(priceFrom))) {
+                query.giaban.$gte = parseInt(priceFrom);
+            }
+            if (priceTo && !isNaN(parseInt(priceTo))) {
+                query.giaban.$lte = parseInt(priceTo);
+            }
           }
       }
 
@@ -147,7 +159,7 @@ app.get('/search', async (req, res) => {
           .limit(parseInt(limit))
           .toArray();
 
-      // Chuyển đổi giaban thành số nếu nó là chuỗi
+      // Chuyển đổi giá thành số nếu nó là chuỗi
       products.forEach(product => {
           if (typeof product.giaban === 'string') {
               product.giaban = parseInt(product.giaban.replace(/[^0-9]/g, ''));
@@ -155,7 +167,7 @@ app.get('/search', async (req, res) => {
       });
 
       // Debug: In ra danh sách sản phẩm tìm thấy
-      console.log("Sản phẩm tìm thấy:", products.map(p => p.name));
+      // console.log("Sản phẩm tìm thấy:", products.map(p => p.name));
 
       const totalProducts = await collection.countDocuments(query);
       res.json({

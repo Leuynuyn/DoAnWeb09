@@ -108,24 +108,36 @@
         let currentPage = 1;
         let totalPages = 1;
 
-        // Hàm cập nhật các bộ lọc đã chọn
+        // Hàm định dạng giá từ chuỗi thành dạng hiển thị
+        function formatCurrency(value) {
+            if (typeof value === 'string') {
+                // Loại bỏ ký tự không phải số và chuyển thành số
+                value = parseInt(value.replace(/[^0-9]/g, ''));
+            }
+            return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + 'đ';
+        }
+
         function updateSelectedFilters() {
             const selectedFiltersDiv = document.getElementById('selectedFilters');
-            selectedFiltersDiv.innerHTML = ''; // Xóa các tag cũ
-
+            selectedFiltersDiv.innerHTML = '';
             const filters = [
                 { id: 'category', label: 'Danh mục' },
                 { id: 'priceRange', label: 'Giá sản phẩm' },
                 { id: 'kichthuoc', label: 'Kích thước' }
             ];
-
             filters.forEach(filter => {
                 const selectElement = document.getElementById(filter.id);
                 const value = selectElement.value;
                 if (value) {
-                    const displayValue = filter.id === 'category' 
-                        ? selectElement.options[selectElement.selectedIndex].text
-                        : value;
+                    let displayValue;
+                    if (filter.id === 'category') {
+                        displayValue = selectElement.options[selectElement.selectedIndex].text;
+                    } else if (filter.id === 'priceRange') {
+                        const [priceFrom, priceTo] = value.split('-');
+                        displayValue = `${formatCurrency(parseInt(priceFrom))} - ${formatCurrency(parseInt(priceTo))}`;
+                    } else {
+                        displayValue = value;
+                    }
                     if (displayValue) {
                         const tag = document.createElement('div');
                         tag.className = 'filter-tag';
@@ -137,8 +149,6 @@
                     }
                 }
             });
-
-            // Thêm nút "Xóa hết" nếu có ít nhất một bộ lọc được chọn
             const hasFilters = selectedFiltersDiv.children.length > 0;
             if (hasFilters) {
                 const clearAllButton = document.createElement('button');
@@ -149,38 +159,32 @@
             }
         }
 
-        // Hàm xóa một bộ lọc cụ thể
         function clearFilter(filterId) {
             const selectElement = document.getElementById(filterId);
-            selectElement.value = ''; // Reset dropdown về giá trị mặc định
-            updateSelectedFilters(); // Cập nhật lại hiển thị
-            searchProducts(); // Tìm kiếm lại
+            selectElement.value = '';
+            updateSelectedFilters();
+            searchProducts();
         }
 
-        // Hàm xóa tất cả bộ lọc
         function clearAllFilters() {
             const filters = ['category', 'priceRange', 'kichthuoc', 'sortBy'];
             filters.forEach(filterId => {
                 document.getElementById(filterId).value = '';
             });
-            document.getElementById('name').value = ''; // Reset ô tìm kiếm
+            document.getElementById('name').value = '';
             updateSelectedFilters();
             searchProducts();
         }
 
-        // Thêm sự kiện change cho các dropdown
         document.querySelectorAll('select[name="category"], select[name="priceRange"], select[name="kichthuoc"], select[name="sortBy"]').forEach(select => {
             select.addEventListener('change', () => {
-                // Khi thay đổi dropdown, reset ô tìm kiếm
                 document.getElementById('name').value = '';
                 updateSelectedFilters();
                 searchProducts();
             });
         });
 
-        // Thêm sự kiện input cho ô tìm kiếm tên sản phẩm
         document.getElementById('name').addEventListener('input', () => {
-            // Khi nhập vào ô tìm kiếm, reset các dropdown
             const filters = ['category', 'priceRange', 'kichthuoc', 'sortBy'];
             filters.forEach(filterId => {
                 document.getElementById(filterId).value = '';
@@ -191,35 +195,29 @@
 
         function searchProducts(page = 1) {
             currentPage = page;
-
-            // Get filter values
-            const name = document.getElementById('name').value;
+            const name = document.getElementById('name').value.trim();
             const category = document.getElementById('category').value;
             const priceRange = document.getElementById('priceRange').value;
             const kichthuoc = document.getElementById('kichthuoc').value;
             const sortBy = document.getElementById('sortBy').value;
-
-            // Nếu có giá trị trong ô tìm kiếm, chỉ gửi tham số name
             const queryParams = {};
             if (name) {
                 queryParams.name = name;
-            } else {
-                // Nếu không có tìm kiếm theo tên, gửi các bộ lọc khác
-                if (category) queryParams.category = category;
-                if (kichthuoc) queryParams.kichthuoc = kichthuoc;
-                if (priceRange) {
-                    const [priceFrom, priceTo] = priceRange.split('-');
+            }
+            if (category) queryParams.category = category;
+            if (kichthuoc) queryParams.kichthuoc = kichthuoc;
+            if (priceRange) {
+                const [priceFrom, priceTo] = priceRange.split('-').map(val => parseInt(val));
+                if (!isNaN(priceFrom) && !isNaN(priceTo)) {
                     queryParams.priceFrom = priceFrom;
                     queryParams.priceTo = priceTo;
                 }
             }
             if (sortBy) queryParams.sortBy = sortBy;
-
             queryParams.page = page;
             queryParams.limit = 10;
-
             const query = new URLSearchParams(queryParams).toString();
-
+            console.log('Query URL:', `/search?${query}`);
             fetch(`/search?${query}`)
                 .then(response => {
                     if (!response.ok) {
@@ -228,10 +226,10 @@
                     return response.json();
                 })
                 .then(data => {
+                    console.log('Response data:', data);
                     totalPages = data.totalPages;
                     const tbody = document.getElementById('productList');
                     tbody.innerHTML = '';
-
                     if (data.products.length === 0) {
                         tbody.innerHTML = '<tr><td colspan="6">Sản phẩm không tồn tại</td></tr>';
                     } else {
@@ -240,7 +238,7 @@
                             row.innerHTML = `
                                 <td>${p.id}</td>
                                 <td>${p.name}</td>
-                                <td>${p.giaban}</td>
+                                <td>${formatCurrency(p.giaban)}</td>
                                 <td>${p.kichthuoc.join(', ')}</td>
                                 <td><img src="/Images/${p.image}" width="100"></td>
                                 <td><button onclick="viewProductDetail('${p.id}')">Xem chi tiết</button></td>
@@ -248,13 +246,12 @@
                             tbody.appendChild(row);
                         });
                     }
-
                     document.getElementById('pageInfo').textContent = `Trang ${data.currentPage} / ${totalPages}`;
                     document.getElementById('prevPage').disabled = data.currentPage === 1;
                     document.getElementById('nextPage').disabled = data.currentPage === totalPages;
                 })
                 .catch(err => {
-                    console.error(err);
+                    console.error('Lỗi tìm kiếm:', err);
                     alert('Lỗi tìm kiếm sản phẩm');
                 });
         }
